@@ -12,6 +12,7 @@
   --font-source-serif-pro: var(--font-source-serif-pro);
   --container-8xl: var(--container-width);
   --bg-pattern: url("/bg/pattern.png");
+  --color-action: var(--action);
 }
 
 @theme inline {
@@ -66,6 +67,7 @@
   --primary-foreground: #1d1d1d;
   --secondary: #ffffff;
   --secondary-foreground: #fff6f6;
+  --action: #f0f014;
   --muted: oklch(0.97 0 0); /* ! explore */
   --muted-foreground: oklch(0.556 0 0); /* ! explore */
   --accent: oklch(0.97 0 0); /* ! explore */
@@ -156,6 +158,43 @@
   }
   .hero-title h1 {
     @apply font-source-serif-pro text-accent-foreground mt-16 max-w-[320px] text-center text-[30px] leading-[100%] sm:max-w-[380px] sm:text-[40px] md:mt-[76px] md:flex md:max-w-full md:flex-col md:text-left md:text-[48px] lg:text-[60px] xl:text-[80px];
+  }
+
+  /* Services */
+  .service-item {
+    @apply relative cursor-none;
+  }
+  .service-icon {
+    @apply relative z-10 w-1/3 scale-0 transition-transform duration-700 ease-in-out;
+  }
+  .service-icon figure {
+    @apply absolute -top-[150%] left-12 h-auto max-w-[372px] -rotate-6 border bg-white p-2 lg:p-4 xl:p-6;
+  }
+  .service-item-link-mob {
+    @apply bg-accent absolute top-0 right-4 flex size-[28px] translate-y-full items-center justify-center rounded-full md:hidden;
+  }
+  @media (min-width: 768px) {
+    .service-item:hover::before {
+      @apply scale-y-100;
+    }
+    .service-item:before {
+      background-image: url("/bg/pattern.png");
+      content: "";
+      transform-origin: top;
+      @apply absolute top-0 left-0 h-full w-full scale-y-0 transition-all duration-700 ease-in-out;
+    }
+  }
+  .service-icon {
+    @apply hidden md:block;
+  }
+  .service-content {
+    @apply z-10 w-full justify-between py-4 text-base md:flex md:w-2/3 md:items-center md:justify-between md:py-5 md:pl-12 md:text-2xl lg:pl-3 lg:text-3xl xl:text-[42px];
+  }
+  .service-content h3 {
+    @apply font-medium uppercase transition-colors duration-700 ease-in-out;
+  }
+  .service-content p {
+    @apply text-accent-foreground transition-colors duration-700 ease-in-out;
   }
 }
 
