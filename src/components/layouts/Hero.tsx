@@ -3,7 +3,7 @@ import { BtnOrLink } from "../elements";
 
 const Hero = () => {
   return (
-    <div className="wrap">
+    <div className="wrap mb-16 md:mb-20">
       <div className="hero-title mb-4 md:mb-10 lg:mb-16">
         <h1 data-fade>
           <span className="indent-30">Тонке підкреслення Вашої</span> <span>природної краси</span>

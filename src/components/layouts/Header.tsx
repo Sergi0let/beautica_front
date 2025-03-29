@@ -14,7 +14,7 @@ const Header = () => {
           <LogoIcon className="mr-5 w-28 shrink-0 min-[1360px]:mr-10 min-[1360px]:w-40 xl:w-30" />
           <CatalogMenu />
           <NavLinks />
-          <div className="flex h-full items-center pl-4  text-sm font-medium md:border-l 2xl:pl-10">
+          <div className="flex h-full items-center pl-4 text-sm font-medium md:border-l 2xl:pl-10">
             <a href={address?.href} target="_blank" rel="noopener noreferrer" className="nav-link mr-4 hidden lg:flex">
               <LocationIcon className="float-left size-5" />
               {address?.title}
@@ -32,8 +32,8 @@ const Header = () => {
             />
           </div>
         </div>
-        <span className="absolute top-0 left-[35.8%] h-screen w-[1px] bg-red-500"></span>
-        <span className="absolute top-0 left-[64.4%] h-screen w-[1px] bg-red-500"></span>
+        <span className="absolute top-0 left-[35.8%] z-50 h-screen w-[1px] bg-red-500"></span>
+        <span className="absolute top-0 left-[64.4%] z-50 h-screen w-[1px] bg-red-500"></span>
       </div>
     </header>
   );

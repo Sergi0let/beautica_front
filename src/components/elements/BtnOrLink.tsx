@@ -16,7 +16,6 @@ type BtnOrLinkProps = {
   disabled?: boolean;
   anchor?: string;
   onClick?: MouseEventHandler;
-  dataFade?: boolean;
   style?: React.CSSProperties;
 };
 
@@ -28,7 +27,7 @@ export const BtnOrLink = ({
   type = "button",
   disabled = false,
   anchor,
-  dataFade = false,
+
   style,
   ...props
 }: BtnOrLinkProps) => {
@@ -82,7 +81,7 @@ export const BtnOrLink = ({
   if (to) {
     return (
       <Link
-        data-fade={dataFade}
+        {...props}
         href={to || ""}
         aria-label={to || ""}
         className={baseStyles}
@@ -97,14 +96,7 @@ export const BtnOrLink = ({
   }
   if (anchor) {
     return (
-      <a
-        data-fade={dataFade}
-        style={style}
-        href={`#${anchor}` || ""}
-        className={baseStyles}
-        onClick={handleClick}
-        ref={linkRef}
-      >
+      <a {...props} style={style} href={`#${anchor}` || ""} className={baseStyles} onClick={handleClick} ref={linkRef}>
         {content}
       </a>
     );
@@ -114,7 +106,6 @@ export const BtnOrLink = ({
     <button
       {...props}
       style={style}
-      data-fade={dataFade}
       type={type}
       disabled={disabled ? true : false}
       className={baseStyles}

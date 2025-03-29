@@ -11,6 +11,7 @@
   --font-roboto-condensed: var(--font-roboto-condensed);
   --font-source-serif-pro: var(--font-source-serif-pro);
   --container-8xl: var(--container-width);
+  --bg-pattern: url("/bg/pattern.png");
 }
 
 @theme inline {
@@ -161,6 +162,9 @@
 @layer utilities {
   .wrap {
     @apply max-w-8xl mx-auto px-4 xl:px-5 2xl:px-10;
+  }
+  .wrap-secondary {
+    @apply max-w-8xl mx-auto px-1 xl:px-2 2xl:px-5;
   }
 
   .flex-center {

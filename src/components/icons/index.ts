@@ -1,5 +1,7 @@
 export * from "./BurgerIcon"
 export * from "./CatalogIcon"
+export * from "./CertificateIcon"
+export * from "./FlowerIcon"
 export * from "./LocationIcon"
 export * from "./LogoIcon"
 export * from "./PhoneIcon"
