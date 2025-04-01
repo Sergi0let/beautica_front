@@ -1,4 +1,4 @@
-import { About, Catalog, Hero } from "@/components";
+import { About, BeforeAfter, Catalog, Hero } from "@/components";
 
 const Page = () => {
   return (
@@ -6,6 +6,7 @@ const Page = () => {
       <Hero />
       <About />
       <Catalog />
+      <BeforeAfter />
     </main>
   );
 };

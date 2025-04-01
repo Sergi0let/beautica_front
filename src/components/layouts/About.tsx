@@ -22,12 +22,19 @@ const About = () => {
           </div>
         </div>
 
-        <div data-fade className="absolute bottom-0 left-1/2 w-[295px] -translate-x-1/2 lg:w-[398px]">
+        {/* <div data-fade className="absolute bottom-0 left-1/2 w-[295px] -translate-x-1/2 lg:w-[398px]">
           <Image src="/about/1.webp" alt="Photo Viki" width={398} height={703} className="relative z-10" />
           <ParallaxMask />
+        </div> */}
+
+        <div className="absolute inset-x-0 bottom-0 flex justify-center">
+          <div className="relative z-10 w-[295px] lg:w-[398px]">
+            <Image src="/about/1.webp" alt="Photo Viki" className="relative z-10" width={398} height={703} />
+            <ParallaxMask />
+          </div>
         </div>
 
-        <ul className="absolute right-5 bottom-5 left-5 grid gap-2 text-sm md:grid-cols-3 lg:text-xl xl:gap-16">
+        <ul className="absolute right-5 bottom-5 left-5 z-20 grid gap-2 text-sm md:grid-cols-3 lg:text-xl xl:gap-16">
           <li
             data-fade
             style={{ transitionDelay: "0.3s" }}

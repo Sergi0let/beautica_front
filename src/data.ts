@@ -38,7 +38,7 @@ export const dataServices = [
     id: "1",
   },
   {
-    title: "Біоревіталізація",
+    title: "Контурна пластика губ",
     href: "/",
     id: "2",
   },
@@ -292,12 +292,12 @@ export const servicesData = [
   },
   {
     id: 2,
-    name: "Біоревіталізація",
+    name: "Контурна пластика губ",
     price: 3200,
-    imgUrl: "/services/2.webp",
-    pageUrl: "/biorevitalizatsiya",
+    imgUrl: "/services/konturna_leaps.webp",
+    pageUrl: "/konturna-plastika-gybu",
     description:
-      "Біоревіталізація забезпечує глибоке зволоження шкіри, покращує її текстуру, повертає пружність та здоровий блиск. Це ідеальне рішення для боротьби з ознаками старіння",
+      "Контурна пластика губ забезпечує глибоке зволоження шкіри, покращує її текстуру, повертає пружність та здоровий блиск. Це ідеальне рішення для боротьби з ознаками старіння",
     stages: [
       {
         id: 1,
@@ -325,7 +325,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Restylane Vital (Швеція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Restylane Vital - препарат гіалуронової кислоти для зволоження та покращення структури шкіри.",
         prices: {
           titlePrice: {
@@ -362,7 +362,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Teosyal Redensity (Швейцарія)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Teosyal Redensity - препарат для інтенсивного зволоження шкіри та боротьби з ознаками старіння.",
         prices: {
           titlePrice: {
@@ -399,7 +399,7 @@ export const servicesData = [
       {
         id: 3,
         title: "Juvéderm Volite (США)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description:
           "Juvéderm Volite - інноваційний препарат для довготривалого зволоження шкіри та покращення її еластичності.",
         prices: {
@@ -437,7 +437,7 @@ export const servicesData = [
       {
         id: 4,
         title: "Filorga NCTF (Франція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Filorga NCTF - мезококтейль для інтенсивного живлення та регенерації шкіри.",
         prices: {
           titlePrice: {
@@ -507,7 +507,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Juvéderm Ultra Smile (США)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Juvéderm Ultra Smile - препарат для створення виразних губ із натуральним об'ємом.",
         prices: {
           titlePrice: {
@@ -538,7 +538,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Teosyal Kiss (Швейцарія)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Teosyal Kiss - інноваційний препарат для збільшення об'єму губ із довготривалим ефектом.",
         prices: {
           titlePrice: {
@@ -569,7 +569,7 @@ export const servicesData = [
       {
         id: 3,
         title: "Restylane Lip Volume (Швеція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Restylane Lip Volume - препарат для створення об'єму та чітких контурів губ.",
         prices: {
           titlePrice: {
@@ -633,7 +633,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Filorga (Франція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description:
           "Філорга – поживний коктейль із гіалуроновою кислотою для регенерації шкіри. Ефективний для боротьби зі зморшками та сухістю.",
         prices: {
@@ -671,7 +671,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Revitacare (Франція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description:
           "Коктейль Revitacare призначений для відновлення пружності шкіри та зменшення проявів пігментації.",
         prices: {
@@ -742,7 +742,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Juvederm Voluma (США)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Juvederm Voluma - ідеальний філер для відновлення об'єму та корекції форми обличчя.",
         prices: {
           titlePrice: {
@@ -779,7 +779,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Restylane Lyft (Швеція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/leapg",
         description: "Restylane Lyft - філер для чітких контурів та відновлення об'єму.",
         prices: {
           titlePrice: {
@@ -814,5 +814,81 @@ export const servicesData = [
         },
       },
     ],
+  },
+]
+
+export const beforAfterData = [
+  {
+    id: 1,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_1.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 2,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_2.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 3,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_3.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 4,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_4.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 5,
+    name: "",
+    imgUrl: "before-after/gybu-placeholder.webp",
+    slug: "",
+
+  },
+  {
+    id: 6,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_5.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 7,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_6.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 8,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_7.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 9,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_8.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 10,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_9.webp`,
+    slug: "konturna-plastika-gybu",
+  },
+  {
+    id: 11,
+    name: "",
+    imgUrl: "before-after/gybu-placeholder.webp",
+    slug: "",
+  },
+  {
+    id: 12,
+    name: "Контурна пластика губ",
+    imgUrl: `before-after/gybu_11.webp`,
+    slug: "konturna-plastika-gybu",
   },
 ]

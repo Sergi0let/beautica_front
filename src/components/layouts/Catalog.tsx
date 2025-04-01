@@ -24,9 +24,9 @@ const Catalog = () => {
               <div className="service-item-link-mob bg-action">
                 <ArrowUpRight size={16} />
               </div>
-              <div className="wrap">
-                <div className="flex border-t">
-                  <div className="service-icon md:group-hover:scale-100">
+              <div className="wrap border-t">
+                <div className="flex">
+                  <div className="service-icon relative z-10 md:group-hover:scale-100">
                     <figure>
                       <Image src={service.imgUrl} alt={service.name} width={372} height={448} />
                     </figure>

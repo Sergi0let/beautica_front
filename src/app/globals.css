@@ -13,6 +13,8 @@
   --container-8xl: var(--container-width);
   --bg-pattern: url("/bg/pattern.png");
   --color-action: var(--action);
+  --color-accent-lighter: var(--accent-lighter);
+  --color-light-secondary: var(--border);
 }
 
 @theme inline {
@@ -71,6 +73,7 @@
   --muted: oklch(0.97 0 0); /* ! explore */
   --muted-foreground: oklch(0.556 0 0); /* ! explore */
   --accent: oklch(0.97 0 0); /* ! explore */
+  --accent-lighter: #fffafa;
   --accent-foreground: #b62121; /* ! explore */
   --destructive: oklch(0.577 0.245 27.325); /* ! explore */
   --border: #ffb6b6;
