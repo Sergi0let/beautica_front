@@ -892,3 +892,184 @@ export const beforAfterData = [
     slug: "konturna-plastika-gybu",
   },
 ]
+
+export const testimonialsData = [
+  {
+    id: 1,
+    name: "Olivia Johnson",
+    avatar: "https://i.pravatar.cc/200?img=11",
+    imgUrl: "/testimonials/1.webp",
+    comment:
+      "Довго шукала хорошого косметолога, і нарешті знайшла! Процедури проходять комфортно, а результат просто чудовий. Особливо задоволена контурною пластикою губ — виглядає дуже природно.",
+    date: "2025-01-20",
+  },
+  {
+    id: 2,
+    name: "Liam Smith",
+    avatar: "https://i.pravatar.cc/200?img=21",
+    imgUrl: "/testimonials/2.webp",
+    comment:
+      "The team at Beatica is so professional and friendly. I felt comfortable throughout my entire visit. Thank you!",
+    date: "2025-01-18",
+  },
+  {
+    id: 3,
+    name: "Emma Brown",
+    imgUrl: "/testimonials/3.webp",
+    avatar: "https://i.pravatar.cc/200?img=31",
+    comment: "Amazing service and incredible results! My skin feels rejuvenated and fresh. Will definitely be back.",
+    date: "2025-01-15",
+  },
+  {
+    id: 4,
+    name: "Noah Williams",
+    imgUrl: "/testimonials/4.webp",
+    avatar: "https://i.pravatar.cc/200?img=41",
+    comment: "A top-notch experience from start to finish. Beatica truly exceeded my expectations. Highly recommended!",
+    date: "2025-01-12",
+  },
+  {
+    id: 5,
+    name: "Sophia Garcia",
+    imgUrl: "/testimonials/5.webp",
+    avatar: "https://i.pravatar.cc/200?img=51",
+    comment:
+      "The attention to detail and care at Beatica is unmatched. My skin has never looked this good. Thank you so much!",
+    date: "2025-01-10",
+  },
+  {
+    id: 6,
+    name: "James Martinez",
+    imgUrl: "/testimonials/6.webp",
+    avatar: "https://i.pravatar.cc/200?img=61",
+    comment:
+      "Beatica offers exceptional services, and their team is incredibly knowledgeable. I trust them with all my skincare needs.",
+    date: "2025-01-08",
+  },
+]
+
+export const sertificateData = {
+  amouts: [
+    {
+      id: 1,
+      name: "Років досвіду",
+      value: 5,
+    },
+    {
+      id: 2,
+      name: "Дипломів та сертифікатів",
+      value: 20,
+    },
+  ],
+  diploms: [
+    {
+      id: 8,
+      title: "Beauty Forum",
+      imgUrl: "/sertification/sert_beauty.webp",
+    },
+    {
+      id: 1,
+      title: "Класична косметологія",
+      imgUrl: "/sertification/sert_cosmetologic.webp",
+    },
+    {
+      id: 2,
+      title: "Біоревіталізація",
+      imgUrl: "/sertification/sert_biorevitalization_2.webp",
+    },
+    {
+      id: 5,
+      title: "Ботолінотерапія",
+      imgUrl: "/sertification/sert_botolinoterapia.webp",
+    },
+    {
+      id: 3,
+      title: "Мезотерапія",
+      imgUrl: "/sertification/sert_mesotherapy.webp",
+    },
+    {
+      id: 4,
+      title: "Анатомія краси",
+      imgUrl: "/sertification/sert_anatomy_krasu.webp",
+    },
+
+
+    {
+      id: 7,
+      title: "Кінейзіотейпінг обличчя та тіла",
+      imgUrl: "/sertification/sert_typeing.webp",
+    },
+
+    {
+      id: 9,
+      title: "Натуральна фармакологія",
+      imgUrl: "/sertification/sert_danne.webp",
+    },
+    {
+      id: 10,
+      title: "Oxford Biolaps",
+      imgUrl: "/sertification/sert_oxford_biolaps.webp",
+    },
+    {
+      id: 6,
+      title: "Косметика Atache",
+      imgUrl: "/sertification/sert_atache.webp",
+    },
+    {
+      id: 11,
+      title: "Паранчук",
+      imgUrl: "/sertification/sert_paranchuk.webp",
+    },
+    {
+      id: 12,
+      title: "Паранчук",
+      imgUrl: "/sertification/sert_paranchuk_2.webp",
+    },
+    {
+      id: 13,
+      title: "Паранчук",
+      imgUrl: "/sertification/sert_paranchuk_3.webp",
+    },
+    {
+      id: 14,
+      title: "Паранчук",
+      imgUrl: "/sertification/sert_pbserum.webp",
+    },
+    {
+      id: 15,
+      title: "Розцева",
+      imgUrl: "/sertification/sert_rozaceva.webp",
+    },
+
+
+  ],
+}
+
+export const faqs = {
+  "main-faq": [
+    {
+      id: 1,
+      question: "Біоревіталізація шкіри гіалуроновою кислотою - базова процедура?",
+      answer:
+        "Інєкційна процедура біоревіталізація гіалуроновою кислотою ефективна, безпечна, а головне універсальна. Проводити маніпуляції можна як на обличчі, так і на тілі.",
+    },
+    {
+      id: 2,
+      question: "Натуральне омолодження. Активні компоненти?",
+      answer:
+        " Натуральне омолодження - це процес, який включає в себе надання допомоги тілінам, щоб відновити їїфункціонування. Активні компоненти - це компоненти, які використовуються для надання допомоги тілінам. Наприклад, вода, водяний пар, мікроелементи, мікроорганизми, мікрофлора, мікрофузи, мікрохлориди, мікроциклічні вещества, натуральні витамині, натуральні масла, натуральні міграції, натуральні порошки, натуральні солодкі, натуральні таблетки, натуральні угри, натуральні інгредіенти",
+    },
+    {
+      id: 3,
+      question: "Швидке відновлення. У місцях проколів можуть з'явитися?",
+      answer:
+        "Швидке відновлення - це процес, який включає в себе надання допомоги тілінам, щоб відновити її функціонування. У місцях проколів можуть з&apos;явитися, але вони повинні бути виправлені в майбутньому. Процедура відновлення шкіри гіалуроновою кислотою включає в себе надання допомоги тілінам, використання активних компонентів, відновлення інтенсивності тіла, відновлення функціонування мозку, відновлення повітря, відновлення іншого функціонування тіла.",
+    },
+    {
+      id: 4,
+      question: "Біоревіталізація шкіри гіалуроновою кислотою - базова процедура?",
+      answer:
+        "Інєкційна процедура біоревіталізація гіалуроновою кислотою ефективна, безпечна, а головне універсальна. Проводити маніпуляції можна як на обличчі, так і на тілі.",
+    },
+  ],
+}

@@ -213,6 +213,129 @@
     @apply flex items-center justify-center;
   }
 }
+/* accardeon */
+.accordion {
+  @apply relative py-4 md:py-6;
+}
+
+.accordion-count {
+  @apply text-accent-foreground absolute top-2 left-0 z-10 text-2xl md:top-1 md:text-3xl;
+}
+
+.accordion-summary .accordion-title {
+  @apply mr-8 text-base font-normal md:mr-10 md:text-xl;
+}
+
+.accordion-content,
+.accordion-summary {
+  @apply grid grid-cols-[40px_auto] md:grid-cols-[35%_auto];
+}
+.accordion-details[open] .accordion-summary:after {
+  transform: rotate(90deg);
+}
+.accordion-summary:before {
+  @apply size-4 bg-[url("/icons/plus.svg")] bg-cover bg-no-repeat md:size-6;
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.accordion-details[open] .accordion-summary:before {
+  @apply h-[2px] bg-[url("/icons/minus.svg")] bg-no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+}
+.accordion-details[open] .accordion-title {
+  @apply text-accent-foreground;
+}
+
+.accordion-summary {
+  @apply relative cursor-pointer list-none;
+}
+
+.accordion-service summary::-webkit-details-marker,
+.accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-content {
+  grid-template-rows: 0fr;
+
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.accordion-content-body {
+  overflow: hidden;
+  @apply mr-6 text-xs md:text-base;
+}
+
+.accordion-details[open] + .accordion-content {
+  grid-template-rows: 1fr;
+  @apply pt-2 md:pt-4;
+}
+
+/* services accordion */
+.accordion-service {
+  @apply relative;
+}
+.accordion-service summary {
+  @apply relative cursor-pointer list-none;
+}
+.accordion-service summary span {
+  @apply text-xl font-bold transition-all duration-300 ease-in-out md:text-3xl;
+}
+.accordion-service-content {
+  grid-template-rows: 0fr;
+
+  @apply grid transition-all duration-300 ease-in-out;
+}
+.accordion-service details {
+  @apply transition-colors duration-700 ease-in-out;
+}
+.accordion-service details[open] + .accordion-service-content {
+  grid-template-rows: 1fr;
+}
+.accordion-service details[open] {
+  @apply border-b;
+}
+.accordion-service details[open] .accordion-service-arrow {
+  @apply rotate-180;
+}
+.accordion-service-content-body {
+  overflow: hidden;
+  @apply flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[533px_1fr];
+}
+.accordion-service-arrow {
+  @apply text-secondary absolute top-1/2 right-4 size-8 -translate-y-1/2 transition-all duration-300 ease-in-out;
+}
+.accardion-drug {
+  @apply relative;
+}
+.accardion-drug details {
+  @apply transition-colors duration-700 ease-in-out lg:hidden;
+}
+@media (max-width: 1024px) {
+  .accardion-drug_content {
+    grid-template-rows: 0fr;
+
+    @apply grid transition-all duration-300 ease-in-out;
+  }
+  .accardion-drug details[open] + .accardion-drug_content {
+    grid-template-rows: 1fr;
+  }
+  .accardion-drug details[open] {
+    @apply border-none bg-white;
+  }
+  .accardion-drug details[open] .accardion-drug-arrow {
+    @apply rotate-180 transition-transform;
+  }
+}
+
+.accardion-drug_content-body {
+  overflow: hidden;
+}
 
 /* -----INSTAGRAM---- */
 .insta-btn {
@@ -263,6 +386,68 @@
 }
 .insta-btn:hover .insta-container {
   background-color: rgba(156, 156, 156, 0.466);
+}
+/* ========== */
+/* slider testimonial */
+
+.testim-wrapper.swiper-wrapper {
+  overflow-x: visible;
+}
+.swiper:not(.swiper-initialized) .sertificate-slide {
+  @apply mr-3 w-[152px] md:mr-9 md:w-[227px];
+}
+.sertificate-slider {
+  @apply static w-full sm:mx-0 md:w-[64%] md:translate-x-[100px] md:!p-5;
+}
+
+@media (max-width: 768px) {
+  .sertificate-slider {
+    width: calc(100% + 32px);
+    margin-inline: -34px;
+    padding-inline: 34px;
+    transform: translateX(-15px);
+  }
+  .sertificate-wrapper {
+    padding-block: 14px;
+  }
+}
+
+.testim-slide {
+  @apply relative !flex !h-auto flex-col rounded-[20px] border border-white;
+}
+.sertificate-slide {
+  @apply w-auto flex-shrink-0;
+}
+
+.testim-progress {
+  @apply bg-action/60 h-1 rounded-sm;
+}
+.testim-progress-horizontal.swiper-scrollbar {
+  @apply !relative z-10 mt-4 translate-y-1 bg-white/20 md:hidden;
+}
+.sertificate-progress-horizontal.swiper-scrollbar {
+  @apply !relative z-10 mt-4 translate-y-1 md:hidden;
+}
+.testim-prev,
+.testim-next {
+  @apply bg-primary hover:bg-action absolute top-1/2 z-10 hidden size-14 -translate-y-1/2 cursor-pointer rounded-full text-center text-white transition-colors duration-500 md:flex md:items-center md:justify-center xl:size-20;
+}
+.testim-prev {
+  @apply left-0;
+}
+.testim-next {
+  @apply right-0;
+}
+.testim-next.swiper-button-disabled,
+.testim-prev.swiper-button-disabled {
+  @apply hidden;
+}
+.testim-prev svg,
+.testim-next svg {
+  @apply fill-foreground w-5 xl:w-10;
+}
+.testim-prev svg {
+  @apply rotate-180;
 }
 /* ------------ */
 .ripple-effect {

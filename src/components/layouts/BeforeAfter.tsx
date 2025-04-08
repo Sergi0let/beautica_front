@@ -34,7 +34,6 @@ const BeforeAfter = () => {
   const endIndices = [3, 4, 7, 11, 15];
   const emptySlots = [4, 10];
 
-  // Filter out the empty slots to get actual items for pagination
   const filteredData = beforAfterData.filter((_, i) => !emptySlots.includes(i));
 
   const renderContent = (elem: { name: string; imgUrl: string; slug: string }) => (
@@ -80,7 +79,7 @@ const BeforeAfter = () => {
 
   return (
     <section className="wrap-secondary bg-accent-lighter rounded-4xl">
-      <div className="mb-16 px-2 pt-10 pb-10 xl:pt-14 xl:pb-24">
+      <div className="mb-2 px-2 pt-10 pb-16 xl:pt-14">
         <h2
           id="before-after"
           className="font-source-serif-pro text-accent-foreground scroll-mt-16 text-center text-2xl leading-none sm:text-5xl md:scroll-mt-20 lg:flex lg:text-left xl:text-[60px]"
@@ -110,9 +109,10 @@ const BeforeAfter = () => {
                       <TooltipContent sideOffset={-200} className="bg-secondary rounded-none border p-2">
                         <Image
                           src={`/${elem.imgUrl}`}
-                          alt={elem.name}
+                          alt={`${elem.name} №${i + 1}`}
                           width={300}
                           height={280}
+                          title={`${elem.name} №${i + 1}`}
                           className="object-cover"
                         />
                         <p className="mt-2 text-center text-2xl font-medium uppercase">{elem.name}</p>

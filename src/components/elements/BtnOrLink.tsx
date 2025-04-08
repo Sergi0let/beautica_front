@@ -67,7 +67,7 @@ export const BtnOrLink = ({
   };
 
   const baseStyles = cn(
-    "btn relative flex-center rounded-[50%] bg-primary overflow-hidden group duration-500 ease-in-out",
+    "btn relative cursor-pointer flex-center rounded-[50%] bg-primary overflow-hidden group duration-500 ease-in-out",
     className,
   );
 

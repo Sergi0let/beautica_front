@@ -1,3 +1,4 @@
+export * from "./ArrowIcon"
 export * from "./BurgerIcon"
 export * from "./CatalogIcon"
 export * from "./CertificateIcon"

@@ -3,71 +3,84 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
+interface IntersectionObserverOptions {
+  threshold: number;
+}
+
 export const ScrollTrace = () => {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Скидаємо скрол при зміні сторінки
     window.scrollTo(0, 0);
     history.scrollRestoration = "manual";
 
-    const handleDOMContentLoaded = () => {
-      const elements = document.querySelectorAll("[data-fade]");
-      const growElements = document.querySelectorAll("[data-grow]");
-      // const faq = document.querySelector(".accordion-details");
+    const handleFadeElements = (elements: NodeListOf<Element>) => {
+      const observerOptions: IntersectionObserverOptions = {
+        threshold: 0.1,
+      };
 
-      // if (faq) {
-      //   faq.setAttribute("open", "");
-      // }
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.setAttribute("data-visible", "true");
-            } else {
-              entry.target.setAttribute("data-visible", "false");
-            }
-          });
-        },
-        {
-          threshold: 0.1, // Відсоток видимості для активації
-        },
-      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          entry.target.setAttribute("data-visible", entry.isIntersecting.toString());
+        });
+      }, observerOptions);
 
-      // const growObserver = new IntersectionObserver(
-      //   (entries) => {
-      //     entries.forEach((entry) => {
-      //       if (entry.isIntersecting) {
-      //         entry.target.setAttribute("data-grow", "true");
-      //       } else {
-      //         entry.target.setAttribute("data-grow", "false");
-      //       }
-      //     });
-      //   },
-      //   {
-      //     threshold: 0.1, // Відсоток видимості для активації
-      //   },
-      // );
+      elements.forEach((el) => observer.observe(el));
+      return () => elements.forEach((el) => observer.unobserve(el));
+    };
 
-      [...elements, ...growElements].forEach((el) => observer.observe(el));
-      // growElements.forEach((el) => growObserver.observe(el));
+    const handleAccordion = () => {
+      const faq = document.querySelector(".accordion-details");
+      const faqSummaries = document.querySelectorAll<HTMLElement>(".accordion-details summary");
+
+      if (faq) {
+        faq.setAttribute("open", "");
+      }
+
+      const closeOtherAccordions = (currentSummary: HTMLElement) => {
+        const openAccordions = document.querySelectorAll(".accordion-details[open]");
+        openAccordions.forEach((accordion) => {
+          if (accordion !== currentSummary.parentElement) {
+            accordion.removeAttribute("open");
+          }
+        });
+      };
+
+      faqSummaries.forEach((summary) => {
+        summary.addEventListener("click", () => closeOtherAccordions(summary));
+      });
 
       return () => {
-        [...elements, ...growElements].forEach((el) => observer.unobserve(el));
-        // growElements.forEach((el) => growObserver.unobserve(el));
+        faqSummaries.forEach((summary) => {
+          summary.removeEventListener("click", () => closeOtherAccordions(summary));
+        });
       };
     };
 
-    // Перевіряємо, чи DOM вже завантажений
+    const initializeElements = () => {
+      const fadeElements = document.querySelectorAll("[data-fade]");
+      const growElements = document.querySelectorAll("[data-grow]");
+
+      const cleanup = [handleFadeElements(fadeElements), handleFadeElements(growElements), handleAccordion()];
+
+      return () => cleanup.forEach((cleanupFn) => cleanupFn?.());
+    };
+
+    let cleanup: (() => void) | undefined;
+
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+      const handler = () => {
+        cleanup = initializeElements();
+        document.removeEventListener("DOMContentLoaded", handler);
+      };
+      document.addEventListener("DOMContentLoaded", handler);
     } else {
-      handleDOMContentLoaded();
+      cleanup = initializeElements();
     }
 
-    return () => {
-      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
-    };
+    return () => cleanup?.();
   }, [pathname]);
 
-  return null; // Компонент не рендерить нічого в DOM
+  return null;
 };
