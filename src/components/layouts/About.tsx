@@ -9,16 +9,14 @@ const About = () => {
         <div className="grid lg:grid-cols-[0.91fr_0.78fr_0.9fr]">
           <div className="order-2 px-8 pt-3 pr-10 text-center text-sm md:text-lg lg:order-1 lg:px-0 lg:pt-0 lg:text-left">
             <p
-              // data-fade
-              // style={{ transitionDelay: "0.3s" }}
+
               className="[&_i]:text-primary inline lg:block [&_i]:not-italic"
             >
               Я - Вікторія, консультант з краси й здоров&apos;я твоєї шкіри. Здобула{" "}
               <i>медичну та вищу фармацевтичну освіту</i>. Тренер <i>Alma lesers Ukraine</i>.{" "}
             </p>
             <p
-              // data-fade
-              // style={{ transitionDelay: "0.6s" }}
+
               className="[&_i]:text-primary inline lg:mt-5 lg:block [&_i]:not-italic"
             >
               Працюю в косметології <i>понад 10 років</i>, тому знаю, як підкреслити твою вроду та зберегти її на довгі

@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { Metadata } from "next";
 import localFont from "next/font/local";
 import { ReactNode } from "react";
@@ -131,7 +132,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="uk">
-      <body className={`${robotoCondensed.variable} ${sourceSerifPro.variable} antialiased`}>{children}</body>
+      <body className={`${robotoCondensed.variable} ${sourceSerifPro.variable} antialiased`}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 };
