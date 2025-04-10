@@ -390,6 +390,9 @@
 /* ========== */
 /* slider testimonial */
 
+.swiper-scrollbar.sertificate-progress-horizontal {
+  @apply !ml-[16px] !w-[calc(100%-32px)];
+}
 .testim-wrapper.swiper-wrapper {
   overflow-x: visible;
 }

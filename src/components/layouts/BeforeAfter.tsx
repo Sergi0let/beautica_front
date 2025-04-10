@@ -81,6 +81,7 @@ const BeforeAfter = () => {
     <section className="wrap-secondary bg-accent-lighter rounded-4xl">
       <div className="mb-2 px-2 pt-10 pb-16 xl:pt-14">
         <h2
+          data-fade
           id="before-after"
           className="font-source-serif-pro text-accent-foreground scroll-mt-16 text-center text-2xl leading-none sm:text-5xl md:scroll-mt-20 lg:flex lg:text-left xl:text-[60px]"
         >
@@ -106,7 +107,7 @@ const BeforeAfter = () => {
                   <div className="hidden min-[920px]:block">
                     <Tooltip>
                       <TooltipTrigger>{renderContent(elem)}</TooltipTrigger>
-                      <TooltipContent sideOffset={-200} className="bg-secondary rounded-none border p-2">
+                      <TooltipContent sideOffset={-200} className="bg-secondary cursor-pointer rounded-none border p-2">
                         <Image
                           src={`/${elem.imgUrl}`}
                           alt={`${elem.name} №${i + 1}`}

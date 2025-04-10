@@ -5,20 +5,14 @@ import ParallaxMask from "../elements/ParallaxMask";
 const About = () => {
   return (
     <section className="wrap-secondary mb-16 overflow-hidden md:mb-20">
-      <div className="relative h-[700px] rounded-4xl bg-blue-50 bg-(image:--bg-pattern) px-3 pt-8 text-white lg:h-[800px] lg:px-5 lg:pt-14">
+      <div className="relative h-[700px] rounded-4xl bg-blue-50 bg-(image:--bg-pattern) pt-8 text-white md:px-3 lg:h-[800px] lg:px-5 lg:pt-14">
         <div className="grid lg:grid-cols-[0.91fr_0.78fr_0.9fr]">
-          <div className="order-2 px-8 pt-3 pr-10 text-center text-sm md:text-lg lg:order-1 lg:px-0 lg:pt-0 lg:text-left">
-            <p
-
-              className="[&_i]:text-primary inline lg:block [&_i]:not-italic"
-            >
+          <div className="order-2 px-4 pt-3 text-center text-sm md:px-8 md:pr-10 md:text-lg lg:order-1 lg:px-0 lg:pt-0 lg:text-left">
+            <p className="[&_i]:text-primary inline lg:block [&_i]:not-italic">
               Я - Вікторія, консультант з краси й здоров&apos;я твоєї шкіри. Здобула{" "}
               <i>медичну та вищу фармацевтичну освіту</i>. Тренер <i>Alma lesers Ukraine</i>.{" "}
             </p>
-            <p
-
-              className="[&_i]:text-primary inline lg:mt-5 lg:block [&_i]:not-italic"
-            >
+            <p className="[&_i]:text-primary inline lg:mt-5 lg:block [&_i]:not-italic">
               Працюю в косметології <i>понад 10 років</i>, тому знаю, як підкреслити твою вроду та зберегти її на довгі
               роки.
             </p>

@@ -166,7 +166,7 @@ const SertificationSlider = () => {
         1024: { slidesPerView: 4 },
       }}
       className="sertificate-slider"
-      wrapperClass="sertificate-wrapper"
+      wrapperClass="sertificate-wrapper pl-4"
     >
       {sertificateData.diploms.map(({ id, title, imgUrl }, index) => (
         <SwiperSlide key={id} className="sertificate-slide h-full">

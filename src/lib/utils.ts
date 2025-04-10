@@ -26,3 +26,7 @@ export const formatPrice = (price: number | null): string => {
   if (!price) return "0"
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
 }
+
+export const normalizePhone = (phone: string): string => {
+  return phone.replace(/[^\d+]/g, "")
+}

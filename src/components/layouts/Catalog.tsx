@@ -9,6 +9,7 @@ const Catalog = () => {
     <section className="relative mb-16 md:mb-14">
       <div className="wrap">
         <h2
+          data-fade
           id="services"
           className="font-source-serif-pro text-accent-foreground scroll-mt-16 text-center text-2xl leading-none md:scroll-mt-20 lg:flex lg:text-left lg:text-5xl xl:text-[60px]"
         >

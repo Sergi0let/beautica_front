@@ -16,7 +16,9 @@ function Menubar({ className, ...props }: React.ComponentProps<typeof MenubarPri
   );
 }
 
-function MenubarMenu({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
+function MenubarMenu({
+  ...props
+}: React.ComponentProps<typeof MenubarPrimitive.Menu> & { open: boolean; onOpenChange: (open: boolean) => void }) {
   return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />;
 }
 

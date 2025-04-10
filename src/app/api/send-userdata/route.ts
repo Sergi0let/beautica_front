@@ -1,6 +1,7 @@
 import config from '@/lib/config'
 import { sendMail } from "@/lib/nodemailer"
 import { renderTemplate } from "@/lib/renderTemplate"
+import { normalizePhone } from "@/lib/utils"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(req: NextRequest) {
@@ -14,7 +15,7 @@ export async function POST(req: NextRequest) {
 
     const { name, phone, description } = data
 
-    const adminEmailText = renderTemplate("send-question", { name, phone, description })
+    const adminEmailText = renderTemplate("send-question", { name, phone: normalizePhone(phone), description })
 
     await sendMail(config.env.mail.test.from, "New message from client", adminEmailText)
 
