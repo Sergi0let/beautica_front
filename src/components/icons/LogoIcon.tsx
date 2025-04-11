@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { SvgProps } from "@/types";
+import type { SvgProps } from "@/types";
 
 export const LogoIcon = ({ className }: SvgProps) => {
   return (

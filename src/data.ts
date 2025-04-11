@@ -31,33 +31,7 @@ export const links = [
   },
 ]
 
-export const dataServices = [
-  {
-    title: "Ботулінотерапія",
-    href: "/",
-    id: "1",
-  },
-  {
-    title: "Контурна пластика губ",
-    href: "/",
-    id: "2",
-  },
-  {
-    title: "Контурна пластика губ",
-    href: "/",
-    id: "3",
-  },
-  {
-    title: "Мезотерапія",
-    href: "/",
-    id: "4",
-  },
-  {
-    title: "Контурна пластика обличчя",
-    href: "/",
-    id: "5",
-  },
-]
+
 
 export const contactsData = [
   {

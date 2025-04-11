@@ -1,4 +1,4 @@
-import { SvgProps } from "@/types";
+import type { SvgProps } from "@/types";
 
 const PhoneIcon = ({ className }: SvgProps) => {
   return (
@@ -8,4 +8,4 @@ const PhoneIcon = ({ className }: SvgProps) => {
   );
 };
 
-export { PhoneIcon }; 
+export { PhoneIcon };

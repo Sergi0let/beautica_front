@@ -1,7 +1,8 @@
 "use client";
 
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { dataServices, links } from "@/data";
+import { dataServices } from "@/constants";
+import { links } from "@/data";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";

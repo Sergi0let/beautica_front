@@ -174,7 +174,7 @@
     @apply absolute -top-[150%] left-12 h-auto max-w-[372px] -rotate-6 border bg-white p-2 lg:p-4 xl:p-6;
   }
   .service-item-link-mob {
-    @apply bg-accent absolute top-0 right-4 flex size-[28px] translate-y-full items-center justify-center rounded-full md:hidden;
+    @apply bg-action absolute top-0 right-4 flex size-[28px] translate-y-full items-center justify-center rounded-full md:hidden;
   }
   @media (min-width: 768px) {
     .service-item:hover::before {
@@ -199,6 +199,31 @@
   .service-content p {
     @apply text-accent-foreground transition-colors duration-700 ease-in-out;
   }
+  /* stage */
+  .stage-count {
+    background-image: url("/bg/pattern.png");
+    @apply lg:bg-secondary top-0 w-fit text-[40px] leading-none md:text-5xl lg:px-2 lg:text-6xl;
+  }
+  .stage-decor {
+    @apply absolute top-6 hidden h-[2px] w-full bg-white lg:block;
+  }
+  .stage-list {
+    @apply mt-6 md:mt-8 lg:mt-16 lg:flex lg:justify-around lg:gap-2;
+  }
+  .stage-list h3 {
+    @apply text-action text-[18px] font-semibold md:text-xl lg:min-h-[72px] lg:text-2xl;
+  }
+  .stage-item {
+    @apply relative mb-4 flex items-start gap-4 lg:w-1/5;
+  }
+  .stage-count {
+    @apply font-source-serif-pro grid grid-cols-[40px_1fr] gap-2 text-white lg:grid-cols-1;
+  }
+  .stage-count_wrapper {
+    @apply grid grid-cols-[40px_1fr] gap-4 lg:grid-cols-1 lg:grid-rows-2 lg:gap-2;
+  }
+
+  /* ========= */
 }
 
 @layer utilities {
@@ -294,6 +319,12 @@
 .accordion-service details {
   @apply transition-colors duration-700 ease-in-out;
 }
+.accordion-service details summary {
+  @apply transition-colors duration-700 ease-in-out;
+}
+.accordion-service details[open] > summary {
+  @apply bg-accent-lighter;
+}
 .accordion-service details[open] + .accordion-service-content {
   grid-template-rows: 1fr;
 }
@@ -308,7 +339,7 @@
   @apply flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[533px_1fr];
 }
 .accordion-service-arrow {
-  @apply text-secondary absolute top-1/2 right-4 size-8 -translate-y-1/2 transition-all duration-300 ease-in-out;
+  @apply text-accent-foreground absolute top-1/2 right-4 size-8 -translate-y-1/2 transition-all duration-300 ease-in-out;
 }
 .accardion-drug {
   @apply relative;
@@ -336,6 +367,34 @@
 .accardion-drug_content-body {
   overflow: hidden;
 }
+/* ----------TABLE-PRICE---------- */
+.table-price {
+  @apply my-5;
+}
+.table-price table {
+  @apply w-full;
+}
+.table-price thead tr th {
+  @apply px-5 py-[10px] text-base font-bold md:text-2xl;
+}
+.table-price tbody tr td {
+  @apply px-5 py-[10px] text-base font-normal md:text-2xl;
+}
+
+.table-price tbody tr td:last-child span {
+  @apply font-source-serif-pro ml-2 -translate-y-2 text-base font-normal text-nowrap text-gray-400 line-through;
+}
+.table-price tbody tr td:last-child {
+  @apply text-accent-foreground font-source-serif-pro font-bold;
+}
+.table-price tbody tr td {
+  @apply w-2/3;
+}
+.table-price thead tr,
+.table-price tr:nth-child(even) {
+  @apply bg-accent-lighter;
+}
+/* ------------------- */
 
 /* -----INSTAGRAM---- */
 .insta-btn {

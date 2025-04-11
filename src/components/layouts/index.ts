@@ -7,6 +7,10 @@ export * from "./Header"
 export * from "./Hero"
 export * from "./Sertification"
 export * from "./SertificationSlider"
+
+export * from "./ServesStages"
+export * from "./ServiseTable"
 export * from "./Testimonials"
 export * from "./TestimonialsSlider"
 
+export * from "./ServesMain"

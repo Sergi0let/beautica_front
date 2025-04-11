@@ -1,7 +1,7 @@
 "use client";
 
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-import { dataServices } from "@/data";
+import { dataServices } from "@/constants";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
