@@ -1,6 +1,7 @@
 export interface SvgProps {
   className?: string
   color?: string
+  animType?: string
 }
 
 export type EmailTemplate = "send-question"

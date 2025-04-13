@@ -1,6 +1,7 @@
 import { StarIcon } from "@/components/icons";
 import { sertificateData } from "@/data";
 import { SertificationSlider } from "./SertificationSlider";
+
 const Sertification = () => {
   return (
     <section>
@@ -19,12 +20,12 @@ const Sertification = () => {
               <li key={id} className="">
                 <span
                   data-fade
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ transitionDelay: `${index * 0.1}s` }}
                   className="font-source-serif-pro text-accent-foreground relative text-[64px] leading-none md:text-[140px]"
                 >
                   {value} <StarIcon className="absolute top-4 -right-6 size-6 md:-right-10 md:size-10" />
                 </span>
-                <span data-fade style={{ animationDelay: `${index * 0.1}s` }} className="block text-xs md:text-xl">
+                <span data-fade style={{ transitionDelay: `${index * 0.1}s` }} className="block text-xs md:text-xl">
                   {name}
                 </span>
               </li>

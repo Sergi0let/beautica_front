@@ -1,6 +1,7 @@
 "use client";
 
 import { InstagramIcon, LocationIcon, PhoneIcon, UserdataForm } from "@/components";
+import { signUpAnchors } from "@/constants";
 import { contactsData } from "@/data";
 import { sendUserdata } from "@/lib/sendUserdata";
 import { usersLeaveDataSchema } from "@/lib/validations";
@@ -23,10 +24,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="mx-auto mb-14 max-w-[665px] md:mb-4 lg:mx-4">
-          <div className="border-action mx-4 rounded-2xl border pt-5 md:pt-8">
+          <div className="border-action mx-4 rounded-2xl border border-solid pt-5 md:pt-8">
             <h2
+              id={signUpAnchors.link}
               data-fade
-              className="font-source-serif-pro mx-auto px-5 text-center text-2xl leading-none min-[1100px]:px-20 sm:text-3xl md:text-4xl lg:text-5xl"
+              className="font-source-serif-pro mx-auto scroll-mt-10 px-5 text-center text-2xl leading-none min-[1100px]:px-20 sm:text-3xl md:text-4xl lg:scroll-mt-[150px] lg:text-5xl"
             >
               Підкресліть свою чарівність
             </h2>
@@ -44,7 +46,7 @@ const Footer = () => {
                 onSubmit={sendUserdata}
               />
             </div>
-            <div className="border-action h-1px mx-5 border-b md:mx-8" />
+            <div className="border-action h-1px mx-5 border-b border-solid md:mx-8" />
             <nav className="m-5 flex flex-col flex-wrap justify-between gap-4 text-sm font-semibold md:flex-row md:text-base">
               <a data-fade href={phone?.href} className="flex flex-nowrap items-center">
                 <PhoneIcon className="float-left mr-2 size-5 fill-white md:size-8" />

@@ -21,21 +21,26 @@ interface Props<T extends FieldValues> {
 
 const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }: Props<T>) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneValue, setPhoneValue] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [, setIsFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const PREFIX = "+38 (0";
 
   const form: UseFormReturn<T> = useForm({
     resolver: zodResolver(schema),
     defaultValues: defaultValues as DefaultValues<T>,
   });
 
-  const [phoneValue, setPhoneValue] = useState("+38 (0");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const PREFIX = "+38 (0";
-
   // Format phone number to ensure it has the correct format with parentheses
   const formatPhoneNumber = (value: string): string => {
-    // If empty or just the prefix, return the prefix
-    if (!value || value === PREFIX) {
+    // If empty, return empty string (for placeholder to show)
+    if (!value || value === "") {
+      return "";
+    }
+
+    // If just the prefix, return the prefix
+    if (value === PREFIX) {
       return PREFIX;
     }
 
@@ -64,6 +69,7 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
     }
   };
 
+  // Handle phone input changes
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value;
 
@@ -84,9 +90,22 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
     // Track if we're deleting
     setIsDeleting(e.key === "Backspace" || e.key === "Delete");
 
-    // Prevent deleting the prefix
+    // If field is empty and user presses a digit, add the prefix
+    if (/^\d$/.test(e.key) && (!phoneValue || phoneValue === "")) {
+      setPhoneValue(PREFIX);
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.value = PREFIX + e.key;
+          const event = new Event("input", { bubbles: true });
+          inputRef.current.dispatchEvent(event);
+        }
+      }, 0);
+    }
+
+    // Prevent deleting the prefix when it's present
     if (
       (e.key === "Backspace" || e.key === "Delete") &&
+      phoneValue.startsWith(PREFIX) &&
       inputRef.current &&
       (inputRef.current.selectionStart || 0) <= PREFIX.length
     ) {
@@ -102,6 +121,8 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
 
   // Handle focus to ensure prefix and cursor position
   const handleFocus = () => {
+    setIsFocused(true);
+
     if (inputRef.current) {
       // If empty, set to prefix
       if (!phoneValue || phoneValue === "") {
@@ -111,7 +132,7 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
 
       // Position cursor after prefix if at the beginning
       const cursorPos = inputRef.current.selectionStart || 0;
-      if (cursorPos < PREFIX.length) {
+      if (cursorPos < PREFIX.length && phoneValue.startsWith(PREFIX)) {
         setTimeout(() => {
           inputRef.current?.setSelectionRange(PREFIX.length, PREFIX.length);
         }, 10);
@@ -119,9 +140,24 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
     }
   };
 
+  // Handle blur event
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>, fieldOnBlur: any) => {
+    setIsFocused(false);
+
+    // If only prefix is entered, clear the field to show placeholder
+    if (phoneValue === PREFIX) {
+      setPhoneValue("");
+      form.setValue("phone" as Path<T>, "" as never);
+    }
+
+    // Call the original onBlur
+    fieldOnBlur(e);
+  };
+
   // Handle click to prevent cursor before prefix
   const handleClick = () => {
-    if (inputRef.current) {
+    if (inputRef.current && phoneValue.startsWith(PREFIX)) {
       const cursorPos = inputRef.current.selectionStart || 0;
       if (cursorPos < PREFIX.length) {
         inputRef.current.setSelectionRange(PREFIX.length, PREFIX.length);
@@ -131,13 +167,17 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
 
   // Initialize phone value
   useEffect(() => {
-    // Set initial phone value from form or default to prefix
-    const initialPhone = (form.getValues("phone" as Path<T>) as string) || PREFIX;
-    setPhoneValue(formatPhoneNumber(initialPhone));
-    form.setValue("phone" as Path<T>, formatPhoneNumber(initialPhone) as never);
+    // Set initial phone value from form
+    const initialPhone = form.getValues("phone" as Path<T>) as string;
+
+    // Only format if it's not empty
+    if (initialPhone && initialPhone !== "") {
+      const formattedValue = formatPhoneNumber(initialPhone);
+      setPhoneValue(formattedValue);
+      form.setValue("phone" as Path<T>, formattedValue as never);
+    }
   }, [form]);
 
-  // Handle form submission
   const handleSubmit: SubmitHandler<T> = async (data) => {
     try {
       setIsSubmitting(true);
@@ -146,7 +186,7 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
 
       if (res.success) {
         form.reset();
-        setPhoneValue(PREFIX);
+        setPhoneValue("");
         toast.success("Успішно відправлено");
       }
 
@@ -173,7 +213,7 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
                 <FormControl>
                   {field.name === "description" ? (
                     <Textarea
-                      className="text-foreground bg-white py-[14px]"
+                      className="text-foreground !bg-white py-[14px]"
                       required
                       placeholder={FIELDS[field.name as keyof typeof FIELDS].placeholder}
                       {...field}
@@ -190,16 +230,16 @@ const UserdataForm = <T extends FieldValues>({ schema, defaultValues, onSubmit }
                       onKeyDown={handleKeyDown}
                       onFocus={handleFocus}
                       onClick={handleClick}
-                      onBlur={field.onBlur}
+                      onBlur={(e) => handleBlur(e, field.onBlur)}
                       value={phoneValue}
-                      className="text-foreground bg-white py-[14px]"
+                      className="text-foreground !bg-white py-[14px]"
                       type="tel"
                       required
                       maxLength={19}
                     />
                   ) : (
                     <Input
-                      className="text-foreground bg-white py-[14px]"
+                      className="text-foreground !bg-white py-[14px]"
                       required
                       type={FIELDS[field.name as keyof typeof FIELDS].type}
                       placeholder={FIELDS[field.name as keyof typeof FIELDS].placeholder}

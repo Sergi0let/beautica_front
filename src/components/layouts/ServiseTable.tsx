@@ -1,4 +1,5 @@
 import { InfoIcon } from "@/components/icons";
+import { ANCHORS } from "@/constants";
 import { discountPercentage, formatPrice } from "@/lib/utils";
 import type { PriceTable } from "@/types";
 import { ChevronDown, MoveDown } from "lucide-react";
@@ -21,24 +22,24 @@ const ServiseTable = ({ priceTable, name }: Props) => {
   return (
     <section className="wrap mt-10 mb-10 md:mt-14 md:mb-20 lg:mt-16 xl:mt-20">
       <h2
-        id=""
-        className="font-source-serif-pro text-accent-foreground scroll-mt-16 text-center text-2xl leading-none sm:text-4xl md:scroll-mt-20 lg:flex lg:text-left xl:text-[60px]"
+        id={ANCHORS.pricing}
+        className="font-source-serif-pro text-accent-foreground scroll-mt-[96px] text-center text-2xl leading-none sm:text-4xl lg:flex lg:scroll-mt-28 lg:text-left xl:text-[60px]"
       >
         <span className="hidden w-[35%] lg:block" />
         <span className="block">Ціни на {priceName[name as keyof typeof priceName]}</span>
       </h2>
 
       <div>
-        <ul className="mt:mb-8 mt-6 border-t">
+        <ul className="mt:mb-8 mt-6 border-t border-solid">
           {priceTable.map(({ id, title, imgUrl, description, prices }, index) => (
             <li
               key={id}
               data-fade
-              style={{ animationDelay: `0.${(index + 1) * 5}s` }}
-              className="accordion-service group border-b"
+              style={{ transitionDelay: `${(index + 1) * 0.3}s` }}
+              className="accordion-service group border-b border-solid"
             >
-              <details className="peer">
-                <summary className="flex">
+              <details className="peer accordion-hook">
+                <summary className="flex items-center">
                   <span className="hidden w-[35%] lg:block" />
                   <span className="group-hover:text-accent-foreground block py-6" role="term">
                     {title}

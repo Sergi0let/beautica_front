@@ -1,5 +1,6 @@
 import { CatalogMenu, LocationIcon, LogoIcon, NavLinks, NavMenu, PhoneIcon } from "@/components";
 import { contactsData } from "@/data";
+import Link from "next/link";
 import { BtnInstagram } from "../elements/BtnInstagram";
 
 const Header = () => {
@@ -8,10 +9,12 @@ const Header = () => {
   const instagram = contactsData.find((contact) => contact.type === "instagram");
 
   return (
-    <header className="border-b">
+    <header className="sticky top-0 left-0 z-50 w-full border-b-[1px] border-solid bg-white">
       <div className="wrap relative">
         <div className="flex h-[60px] items-center lg:h-20">
-          <LogoIcon className="mr-5 w-28 shrink-0 min-[1360px]:mr-10 min-[1360px]:w-40 xl:w-30" />
+          <Link href="/" className="flex items-center">
+            <LogoIcon className="mr-5 w-28 shrink-0 min-[1360px]:mr-10 min-[1360px]:w-40 xl:w-30" />
+          </Link>
           <CatalogMenu />
           <NavLinks />
           <div className="flex h-full items-center pl-4 text-sm font-medium md:border-l 2xl:pl-10">

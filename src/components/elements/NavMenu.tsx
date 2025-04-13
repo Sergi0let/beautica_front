@@ -1,8 +1,8 @@
 "use client";
 
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { dataServices } from "@/constants";
-import { links } from "@/data";
+import { useAnchorData } from "@/hooks/useAnchorData";
+import useCurrentServices from "@/hooks/useCurrentServices";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -20,6 +20,11 @@ interface Props {
 const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1320px)" });
   const [isMounted, setIsMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const displayAnchors = useAnchorData();
+  const displayCurrentServices = useCurrentServices();
+
+  const closeSheet = () => setIsOpen(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -35,7 +40,7 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
 
   return (
     <div className="min-[1320px]:hidden">
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild className="">
           <button
             aria-label="Відкрити меню навігації"
@@ -57,31 +62,29 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
 
           <div className="flex-1 overflow-y-auto shadow-sm">
             <ul className="space-y-5 border-b px-4 py-5 text-sm font-medium uppercase md:text-base">
-              {dataServices.map((service) => (
+              {displayCurrentServices.map((service) => (
                 <li key={service.id}>
-                  <SheetClose asChild>
-                    <Link
-                      href={service.href}
-                      className="hover:text-accent-foreground w-full transition-colors duration-500"
-                    >
-                      {service.title}
-                      <ChevronRight className="text-accent-foreground float-right ml-1 size-4" />
-                    </Link>
-                  </SheetClose>
+                  <Link
+                    href={service.href}
+                    onClick={closeSheet}
+                    className="hover:text-accent-foreground w-full transition-colors duration-500"
+                  >
+                    {service.title}
+                    <ChevronRight className="text-accent-foreground float-right ml-1 size-4" />
+                  </Link>
                 </li>
               ))}
             </ul>
             <ul className="space-y-5 border-b px-4 py-5 text-sm font-medium uppercase md:text-base">
-              {links.map((service) => (
+              {displayAnchors.map((service) => (
                 <li key={service.id}>
-                  <SheetClose asChild>
-                    <a
-                      href={service.href}
-                      className="hover:text-accent-foreground w-full transition-colors duration-500"
-                    >
-                      {service.title}
-                    </a>
-                  </SheetClose>
+                  <a
+                    href={service.href}
+                    onClick={closeSheet}
+                    className="hover:text-accent-foreground w-full transition-colors duration-500"
+                  >
+                    {service.name}
+                  </a>
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 import { BeforeAfter, Faq, Sertification, ServesMain, ServesStages, ServiseTable, Testimonials } from "@/components";
 import { servicesData } from "@/constants";
+
 // import type { Metadata } from "next";
 
 // export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
@@ -48,7 +49,7 @@ const PageServes = async ({ params }: { params: Promise<{ slug: string }> }) => 
       <BeforeAfter />
       <Testimonials />
       <Sertification />
-      <Faq />
+      <Faq type={slug} />
     </main>
   );
 };

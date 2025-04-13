@@ -1,6 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { Metadata } from "next";
+
 import localFont from "next/font/local";
+import Head from "next/head";
 import { ReactNode } from "react";
 import "./globals.css";
 
@@ -131,7 +133,10 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="uk">
+    <html lang="uk" className="scroll-smooth">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </Head>
       <body className={`${robotoCondensed.variable} ${sourceSerifPro.variable} antialiased`}>
         {children}
         <Toaster />

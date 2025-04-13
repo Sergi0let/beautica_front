@@ -136,6 +136,11 @@
   body {
     @apply bg-background text-foreground font-roboto-condensed;
   }
+  html,
+  body {
+    overflow-x: scroll;
+    max-width: 100vw;
+  }
 }
 
 @layer components {
@@ -165,16 +170,16 @@
 
   /* Services */
   .service-item {
-    @apply relative cursor-none;
+    @apply relative cursor-none px-4 md:px-0;
   }
   .service-icon {
     @apply relative z-10 w-1/3 scale-0 transition-transform duration-700 ease-in-out;
   }
   .service-icon figure {
-    @apply absolute -top-[150%] left-12 h-auto max-w-[372px] -rotate-6 border bg-white p-2 lg:p-4 xl:p-6;
+    @apply absolute -top-[150%] left-12 h-auto max-w-[372px] -rotate-6 border border-solid bg-white p-2 lg:p-4 xl:p-6;
   }
   .service-item-link-mob {
-    @apply bg-action absolute top-0 right-4 flex size-[28px] translate-y-full items-center justify-center rounded-full md:hidden;
+    @apply bg-action absolute top-1/3 right-4 flex size-[28px] items-center justify-center rounded-full md:hidden;
   }
   @media (min-width: 768px) {
     .service-item:hover::before {
@@ -221,6 +226,270 @@
   }
   .stage-count_wrapper {
     @apply grid grid-cols-[40px_1fr] gap-4 lg:grid-cols-1 lg:grid-rows-2 lg:gap-2;
+  }
+  /* ------==========--------- */
+  /* Include this in your global CSS file */
+
+  .image-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+  }
+
+  .image-scroll-container.scrollable {
+    cursor: pointer;
+  }
+
+  .image-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    transition: transform 0s;
+  }
+
+  /* Generate animation classes for each possible image */
+  .scrollable:hover .scroll-image-0 {
+    animation: scrollUp0 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-1 {
+    animation: scrollUp1 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-2 {
+    animation: scrollUp2 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-3 {
+    animation: scrollUp3 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-4 {
+    animation: scrollUp4 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-5 {
+    animation: scrollUp5 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-6 {
+    animation: scrollUp6 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-7 {
+    animation: scrollUp7 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-8 {
+    animation: scrollUp8 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-9 {
+    animation: scrollUp9 8s linear infinite alternate;
+  }
+
+  .scrollable:hover .scroll-image-10 {
+    animation: scrollUp10 8s linear infinite alternate;
+  }
+
+  /* Define keyframes for each image */
+  @keyframes scrollUp0 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-0, 420px)));
+    }
+  }
+
+  @keyframes scrollUp1 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-1, 420px)));
+    }
+  }
+
+  @keyframes scrollUp2 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-2, 420px)));
+    }
+  }
+
+  @keyframes scrollUp3 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-3, 420px)));
+    }
+  }
+
+  @keyframes scrollUp4 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-4, 420px)));
+    }
+  }
+
+  @keyframes scrollUp5 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-5, 420px)));
+    }
+  }
+
+  @keyframes scrollUp6 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-6, 420px)));
+    }
+  }
+
+  @keyframes scrollUp7 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-7, 420px)));
+    }
+  }
+
+  @keyframes scrollUp8 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-8, 420px)));
+    }
+  }
+
+  @keyframes scrollUp9 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-9, 420px)));
+    }
+  }
+
+  @keyframes scrollUp10 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + var(--scroll-distance-10, 420px)));
+    }
+  }
+
+  /* Swiper styles */
+  .testim-slide {
+    height: auto;
+  }
+
+  /* Add this to your global CSS file */
+
+  .testimonial-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+  }
+
+  .testimonial-image-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    transition: transform 0s;
+  }
+
+  /* Only apply cursor pointer to images that need scrolling */
+  .needs-scroll {
+    cursor: pointer;
+  }
+
+  /* Only apply animation to images that need scrolling */
+  .needs-scroll:hover .testimonial-image {
+    animation: testimonialScroll 8s linear infinite alternate;
+  }
+
+  @keyframes testimonialScroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      /* Use the dynamic scroll amount */
+      transform: translateY(calc(-1 * var(--scroll-amount, 0px)));
+    }
+  }
+
+  /* Swiper navigation styles */
+  .testim-prev,
+  .testim-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .testim-prev {
+    left: 10px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .testim-next {
+    right: 10px;
+  }
+
+  .testim-progress {
+    height: 4px !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .testim-progress-horizontal {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: white !important;
   }
 
   /* ========= */
@@ -329,7 +598,7 @@
   grid-template-rows: 1fr;
 }
 .accordion-service details[open] {
-  @apply border-b;
+  @apply border-b border-solid;
 }
 .accordion-service details[open] .accordion-service-arrow {
   @apply rotate-180;
@@ -339,7 +608,7 @@
   @apply flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[533px_1fr];
 }
 .accordion-service-arrow {
-  @apply text-accent-foreground absolute top-1/2 right-4 size-8 -translate-y-1/2 transition-all duration-300 ease-in-out;
+  @apply text-accent-foreground absolute top-1/2 right-4 size-6 -translate-y-1/2 transition-all duration-300 ease-in-out sm:size-8;
 }
 .accardion-drug {
   @apply relative;
@@ -475,7 +744,7 @@
 }
 
 .testim-slide {
-  @apply relative !flex !h-auto flex-col rounded-[20px] border border-white;
+  @apply relative !flex !h-auto flex-col rounded-[20px] border border-solid border-white;
 }
 .sertificate-slide {
   @apply w-auto flex-shrink-0;

@@ -1,3 +1,4 @@
+import { signUpAnchors } from "@/constants";
 import Image from "next/image";
 import { BtnOrLink } from "../elements";
 
@@ -26,20 +27,17 @@ const Hero = () => {
         </div>
         <div className="order-1 col-span-2 mx-auto mb-10 max-w-[456px] text-justify sm:text-pretty md:pr-4 lg:order-2 lg:col-span-1 lg:mb-0 lg:max-w-full xl:pr-10">
           <p style={{ transitionDelay: "0.3s" }} data-fade className="text-sm md:text-base xl:text-lg">
-            {/* Ми не змінюємо вашу природну красу — ми допомагаємо її розкрити та підкреслити! Завдяки сучасним методам і
-            передовим косметологічним технологіям ви зможете виглядати впевнено, доглянуто та гармонійно. */}
-            Ми спеціалізуємось на ботулінотерапії, контурній пластиці губ і обличчя, мезотерапії, а також проводимо
-            комплексні доглядові процедури для шкіри. Кожна послуга підбирається індивідуально — з урахуванням ваших
-            потреб та побажань. Ніякого перебільшення — тільки професійний підхід, безпека і результат, який виглядає
-            природно.
+            Ми спеціалізуємось на ботулінотерапії, контурній пластиці губ і обличчя, мезотерапії, біоревіталізації а
+            також проводимо комплексні доглядові процедури для шкіри (антиоксидантні, протизапальні, ліфтингові, та
+            процедури глибокого зволоження шкіри).
           </p>
           <BtnOrLink
             data-fade
             style={{ transitionDelay: "0.6s" }}
-            anchor="/"
+            anchor={signUpAnchors.link}
             className="mx-auto mt-4 h-14 max-w-[256px] text-sm font-bold uppercase md:mt-10 lg:h-20 lg:max-w-full lg:text-xl"
             type="button"
-            title="Записатися на прийом"
+            title={signUpAnchors.name}
           />
         </div>
         <div className="order-3 pl-1 md:pl-2 lg:order-2 lg:pl-0">
@@ -48,11 +46,11 @@ const Hero = () => {
               data-grow
               style={{ transitionDelay: "1.2s" }}
               priority={true}
-              src="/hero/2.webp"
+              src="/hero/3.jpg"
               width={530}
               height={305}
               alt="hero image"
-              className="size-full object-cover"
+              className="size-full object-cover object-top"
             />
           </div>
         </div>

@@ -2,11 +2,13 @@
 
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { ANCHORS } from "@/constants";
 import { beforAfterData } from "@/data";
 import { AnimatePresence, motion } from "framer-motion";
 import { XIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useSwipeable } from "react-swipeable";
 
 const variants = {
@@ -23,6 +25,7 @@ const variants = {
 
 const BeforeAfter = () => {
   const [isDesktop, setIsDesktop] = useState(false);
+  const withoutEmptySlots = useMediaQuery({ query: "(max-width: 1420px)" });
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -82,17 +85,20 @@ const BeforeAfter = () => {
       <div className="mb-2 px-2 pt-10 pb-16 xl:pt-14">
         <h2
           data-fade
-          id="before-after"
-          className="font-source-serif-pro text-accent-foreground scroll-mt-16 text-center text-2xl leading-none sm:text-5xl md:scroll-mt-20 lg:flex lg:text-left xl:text-[60px]"
+          id={ANCHORS.beforeAfter}
+          className="font-source-serif-pro text-accent-foreground scroll-mt-[96px] text-center text-2xl leading-none sm:text-5xl lg:flex lg:scroll-mt-28 lg:text-left xl:text-[60px]"
         >
           <span className="hidden w-[35%] lg:block" />
           <span className="block -translate-x-4 lg:translate-x-2">До та після</span>
         </h2>
 
-        <ul className="grid grid-cols-2 gap-x-2 gap-y-4 pt-6 min-[420px]:grid-cols-3 min-[920px]:grid-cols-[35%_28.4%_20%_14%] lg:pt-12 xl:grid-cols-[33.3%_27.3%_18%_13.1%] xl:gap-8">
+        <ul
+          data-fade
+          className="grid grid-cols-2 gap-x-2 gap-y-4 pt-6 min-[920px]:grid-cols-3 min-[1420px]:grid-cols-[33.3%_27.3%_18%_13.1%] lg:pt-12 xl:gap-8"
+        >
           {beforAfterData.map((elem, i) => {
             if (emptySlots.includes(i)) {
-              if (!isDesktop && mounted) return null;
+              if ((!isDesktop || withoutEmptySlots) && mounted) return null;
               return <li key={`empty-${i}`} className="bg-transparent" />;
             }
 
@@ -101,7 +107,7 @@ const BeforeAfter = () => {
             return (
               <li
                 key={i}
-                className={`${!isDesktop ? "justify-self-center" : "justify-self-start"} ${isEnd && isDesktop ? "justify-self-end" : ""}`}
+                className={`${!isDesktop ? "justify-self-center" : "justify-self-center min-[1420px]:justify-self-start"} ${isEnd && isDesktop ? "min-[1420px]:justify-self-end" : ""}`}
               >
                 {isDesktop && mounted && (
                   <div className="hidden min-[920px]:block">
