@@ -41,7 +41,7 @@ const BeforeAfter = () => {
 
   const renderContent = (elem: { name: string; imgUrl: string; slug: string }) => (
     <span className="w-[140px] cursor-pointer sm:w-[140px] lg:w-[180px]">
-      <Image src={`/${elem.imgUrl}`} alt={elem.name} width={180} height={93} className="object-cover" />
+      <Image src={`/${elem.imgUrl}`} alt={elem.name} width={180} height={93} className="h-auto w-full object-cover" />
       <span className="mt-2 line-clamp-2 text-[9px] font-medium uppercase lg:mt-3 lg:text-xs">{elem.name}</span>
     </span>
   );
@@ -59,11 +59,9 @@ const BeforeAfter = () => {
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       paginate(1);
-      console.log("swiped left");
     },
     onSwipedRight: () => {
       paginate(-1);
-      console.log("swiped right");
     },
     preventScrollOnSwipe: true,
     trackMouse: true,
@@ -120,7 +118,7 @@ const BeforeAfter = () => {
                           width={300}
                           height={280}
                           title={`${elem.name} №${i + 1}`}
-                          className="object-cover"
+                          className="h-auto w-full object-cover"
                         />
                         <p className="mt-2 text-center text-2xl font-medium uppercase">{elem.name}</p>
                       </TooltipContent>

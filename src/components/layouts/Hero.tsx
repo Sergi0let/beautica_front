@@ -41,7 +41,7 @@ const Hero = () => {
           />
         </div>
         <div className="order-3 pl-1 md:pl-2 lg:order-2 lg:pl-0">
-          <div className="relative h-full max-w-full lg:max-h-[305px] lg:max-w-[530px]">
+          <div className="relative h-full max-w-full overflow-hidden lg:max-h-[305px] lg:max-w-[530px]">
             <Image
               data-grow
               style={{ transitionDelay: "1.2s" }}
@@ -50,7 +50,7 @@ const Hero = () => {
               width={530}
               height={305}
               alt="hero image"
-              className="size-full object-cover object-top"
+              className="aspect-auto size-full object-cover object-top"
             />
           </div>
         </div>

@@ -50,7 +50,14 @@ const ServesMain = ({ name, description, imgUrl }: Props) => {
         </div>
       </div>
       <figure className="h-auto max-h-[538px] overflow-hidden rounded-2xl md:rounded-[32px]">
-        <Image priority={true} src={imgUrl} alt={name} className="size-full object-cover" width={770} height={538} />
+        <Image
+          priority={true}
+          src={imgUrl}
+          alt={name}
+          className="h-auto w-full object-cover"
+          width={770}
+          height={538}
+        />
       </figure>
     </div>
   );

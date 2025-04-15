@@ -1,4 +1,4 @@
-import config from '@/lib/config'
+import config from '@/config'
 import { sendMail } from "@/lib/nodemailer"
 import { renderTemplate } from "@/lib/renderTemplate"
 import { normalizePhone } from "@/lib/utils"

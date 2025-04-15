@@ -21,7 +21,6 @@ const useCurrentServices = () => {
 
       const filtered = rawServices.filter((service) => {
         const hrefSegment = service.href.replace("/", "")
-        console.log(hrefSegment, currentSegment)
         return hrefSegment !== currentSegment
       })
 

@@ -31,7 +31,7 @@ const About = () => {
 
         <div className="absolute inset-x-0 bottom-0 flex justify-center">
           <div className="relative z-10 w-[295px] lg:w-[398px]">
-            <Image src="/about/1.webp" alt="Photo Viki" className="relative z-10" width={398} height={703} />
+            <Image src="/about/1.webp" alt="Photo Viki" className="relative z-10 size-auto" width={398} height={703} />
             <ParallaxMask />
           </div>
         </div>

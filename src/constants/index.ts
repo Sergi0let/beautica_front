@@ -1,5 +1,6 @@
 import type { MetadataItem } from "@/types"
 
+export const baseUrl = "https://www.beautica.com.ua"
 // ==================== SERVICES ROUTES =============
 export const ServicesRoutes = {
   botulinoterapia: "botulinoterapia",
@@ -122,31 +123,31 @@ export const FIELDS = {
 // ==================== END FIELDS =============
 // ==================== METADATA FOR EACH SERVICE =============
 export const metadataObj: Record<string, MetadataItem> = {
-  botulinoterapia: {
+  [ServicesRoutes.botulinoterapia]: {
     title: "Ботулінотерапія",
     description:
       "Ботулінотерапія дарує видимий омолоджуючий ефект без хірургічного втручання. Ін'єкції краси розгладжують мімічні та кисетні зморшки, знімають гіпертонус м’язів, даруючи шкірі свіжий вигляд.",
     image: "botolin.jpg",
   },
-  biorevitalizatsiya: {
+  [ServicesRoutes.biorevitalizatsiya]: {
     title: "Біоревіталізація",
     description:
       "Біоревіталізація забезпечує глибоке зволоження шкіри, покращує її текстуру, повертає пружність та здоровий блиск. Це ідеальне рішення для боротьби з ознаками старіння",
     image: "2.webp",
   },
-  ["konturna-plastika-gubu"]: {
+  [ServicesRoutes.konturnaPlastukaGyb]: {
     title: "Контурна плістика губ",
     description:
       "Контурна плістика губ - це дієтина, яка дозволяє змінювати тіло та збільшувати масу тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги. Це дієтина, яка дозволяє збільшити відносні ваги тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги.",
     image: "konturna_leaps.webp",
   },
-  ["mezoterapia"]: {
+  [ServicesRoutes.mezoterapia]: {
     title: "Мезотерапія",
     description:
       "Мезотерапія - це процедура, яка дозволяє змінювати тіло та збільшувати масу тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги. Це дієтина, яка дозволяє збільшити відносні ваги тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги.",
     image: "mezoterapia.webp",
   },
-  ["konturna-plastika-oblicha"]: {
+  [ServicesRoutes.konturnaPlastikaOblicha]: {
     title: "Контурна плістика обличчя",
     description:
       "Контурна плістика обличчя - це дієтина, яка дозволяє змінювати тіло та збільшувати масу тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги. Це дієтина, яка дозволяє збільшити відносні ваги тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги.",
@@ -155,7 +156,7 @@ export const metadataObj: Record<string, MetadataItem> = {
 } as const
 // ==================== END METADATA =============
 // ========== FAQ =============
-export const faqs1 = {
+export const faqs = {
   [ServicesRoutes.biorevitalizatsiya]: [
     {
       id: "1",

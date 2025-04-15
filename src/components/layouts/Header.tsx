@@ -9,7 +9,7 @@ const Header = () => {
   const instagram = contactsData.find((contact) => contact.type === "instagram");
 
   return (
-    <header className="sticky top-0 left-0 z-50 w-full border-b-[1px] border-solid bg-white">
+    <header className="fixed top-0 left-0 z-50 w-full border-b-[1px] border-solid bg-white">
       <div className="wrap relative">
         <div className="flex h-[60px] items-center lg:h-20">
           <Link href="/" className="flex items-center">

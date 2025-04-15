@@ -35,7 +35,7 @@ const ServiseTable = ({ priceTable, name }: Props) => {
             <li
               key={id}
               data-fade
-              style={{ transitionDelay: `${(index + 1) * 0.3}s` }}
+              style={{ transitionDelay: `${(index + 1) * 0.2}s` }}
               className="accordion-service group border-b border-solid"
             >
               <details className="peer accordion-hook">
