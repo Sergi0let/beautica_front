@@ -35,8 +35,6 @@ const Header = () => {
             />
           </div>
         </div>
-        <span className="absolute top-0 left-[35.8%] z-50 h-screen w-[1px] bg-red-500"></span>
-        <span className="absolute top-0 left-[64.4%] z-50 h-screen w-[1px] bg-red-500"></span>
       </div>
     </header>
   );

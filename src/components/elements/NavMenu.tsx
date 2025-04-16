@@ -1,14 +1,15 @@
 "use client";
 
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { useAnchorData } from "@/hooks/useAnchorData";
-import useCurrentServices from "@/hooks/useCurrentServices";
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
-import { BurgerIcon, LocationIcon, LogoIcon, PhoneIcon } from "../icons";
-import { BtnOrLink } from "./BtnOrLink";
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { useAnchorData } from "@/hooks/useAnchorData"
+import useCurrentServices from "@/hooks/useCurrentServices"
+import { ChevronRight } from "lucide-react"
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import { useMediaQuery } from "react-responsive"
+import { BurgerIcon, LocationIcon, LogoIcon, PhoneIcon } from "../icons"
+import { BtnOrLink } from "./BtnOrLink"
+import { signUpAnchors } from '@/constants'
 
 interface Props {
   address: string;
@@ -107,7 +108,7 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
           </div>
           <div className="sticky bottom-0 mt-auto mb-2 px-10 pt-2">
             <SheetClose asChild>
-              <BtnOrLink anchor="/" className="h-12" type="button" title="Записатися на прийом" />
+              <BtnOrLink anchor={signUpAnchors.link} className="h-12" type="button" title="Записатися на прийом" />
             </SheetClose>
           </div>
         </SheetContent>
@@ -116,4 +117,5 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
   );
 };
 
-export { NavMenu };
+export { NavMenu }
+

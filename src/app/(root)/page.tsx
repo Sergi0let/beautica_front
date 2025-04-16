@@ -1,4 +1,14 @@
-import { About, BeforeAfter, Catalog, Faq, FaqStructuredData, Hero, Sertification, Testimonials } from "@/components";
+import {
+  About,
+  BeforeAfter,
+  Catalog,
+  Faq,
+  FaqStructuredData,
+  Hero,
+  Partners,
+  Sertification,
+  Testimonials,
+} from "@/components";
 import { faqs } from "@/constants";
 import Head from "next/head";
 
@@ -16,6 +26,7 @@ const Page = () => {
         <Catalog />
         <BeforeAfter />
         <Testimonials />
+        <Partners />
         <Sertification />
         <Faq />
       </main>

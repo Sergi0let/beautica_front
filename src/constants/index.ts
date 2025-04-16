@@ -1104,3 +1104,16 @@ export const servicesData = [
   },
 ]
 // ============= END SERVICES DATA =============
+
+// ============= START PARTNERS DATA =============
+export const partnersData = [
+  { src: "/partners/hydropeptide.png", alt: "hydropeptide", link: "https://hydropeptide.com.ua" },
+  { src: "/partners/medic8.png", alt: "medic8", link: "https://medik8.ua" },
+  { src: "/partners/colorscience-logo.png", alt: "colorscience-logo", link: "https://colorescience.com.ua" },
+  { src: "/partners/atache-logo.png", alt: "Atache brend", link: "https://atache.com" },
+  { src: "/partners/beauti-vite.png", alt: "beauti-vite", link: "https://vilna-beauty.com" },
+  { src: "/partners/utsukusy.png", alt: "beauti-vite", link: "https://vilna-beauty.com" },
+  { src: "/partners/circadia.png", alt: "circadia", link: "https://www.circadia.com.ua" },
+  { src: "/partners/is_clinical.png", alt: "is_clinical", link: "https://is-clinical.com.ua" },
+]
+// ============= END PARTNERS DATA =============

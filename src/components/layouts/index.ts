@@ -13,4 +13,6 @@ export * from "./ServiseTable"
 export * from "./Testimonials"
 export * from "./TestimonialsSlider"
 
+export * from "./Partners"
 export * from "./ServesMain"
+

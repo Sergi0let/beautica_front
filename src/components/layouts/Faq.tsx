@@ -17,7 +17,7 @@ const Faq = ({ type = "generalType" }: Props) => {
         </h2>
 
         <ul className="border-t border-solid">
-          {faqs[type].map(({ id, question, answer }, index) => (
+          {faqs[type]?.map(({ id, question, answer }, index) => (
             <li
               key={id}
               data-fade
