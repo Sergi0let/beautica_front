@@ -8,7 +8,7 @@ const Partners = () => {
     <section className="wrap mb-16 md:mb-[120px]">
       <div>
         <header className="mb-6 flex flex-col-reverse items-center justify-center gap-4 lg:mb-9 lg:grid lg:grid-cols-3 lg:gap-5">
-          <div className="flex w-full items-center justify-center md:gap-4 md:justify-self-start">
+          <div data-fade className="flex w-full items-center justify-center md:gap-4 md:justify-self-start">
             <StarIcon className="size-6" />
             <p className="text-accent-foreground text-center text-base leading-tight font-semibold xl:text-xl">
               У своїй роботі я використовую
@@ -18,6 +18,7 @@ const Partners = () => {
           </div>
           <div className="flex items-center justify-center">
             <h2
+              data-fade
               id="partners"
               className="font-source-serif-pro text-accent-foreground scroll-mt-[96px] text-center text-2xl leading-none text-nowrap sm:text-5xl lg:flex lg:scroll-mt-28 lg:text-left xl:text-[60px]"
             >
@@ -33,7 +34,10 @@ const Partners = () => {
           </div>
         </header>
 
-        <ul className="bg-accent-foreground grid h-full grid-cols-2 gap-0.5 p-0.5 md:grid-cols-4">
+        <ul
+          data-fade
+          className="md:bg-accent-foreground grid h-full grid-cols-2 gap-[1px] bg-[#ffb6b6] p-[1px] md:grid-cols-4 md:gap-0.5 md:p-0.5"
+        >
           {partnersData.map((partner, index) => (
             <li
               key={index}
@@ -70,5 +74,4 @@ const Partners = () => {
     </section>
   );
 };
-
 export { Partners };

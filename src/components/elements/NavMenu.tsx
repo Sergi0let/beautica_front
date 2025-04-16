@@ -1,15 +1,15 @@
 "use client";
 
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { useAnchorData } from "@/hooks/useAnchorData"
-import useCurrentServices from "@/hooks/useCurrentServices"
-import { ChevronRight } from "lucide-react"
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import { useMediaQuery } from "react-responsive"
-import { BurgerIcon, LocationIcon, LogoIcon, PhoneIcon } from "../icons"
-import { BtnOrLink } from "./BtnOrLink"
-import { signUpAnchors } from '@/constants'
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { signUpAnchors } from "@/constants";
+import { useAnchorData } from "@/hooks/useAnchorData";
+import useCurrentServices from "@/hooks/useCurrentServices";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import { BurgerIcon, LocationIcon, LogoIcon, PhoneIcon } from "../icons";
+import { BtnOrLink } from "./BtnOrLink";
 
 interface Props {
   address: string;
@@ -61,8 +61,8 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
             </SheetTitle>
           </SheetHeader>
 
-          <div className="flex-1 overflow-y-auto shadow-sm">
-            <ul className="space-y-5 border-b px-4 py-5 text-sm font-medium uppercase md:text-base">
+          <div className="flex-1 overflow-y-auto">
+            <ul className="space-y-5 border-b border-solid px-4 py-5 text-sm font-medium uppercase md:text-base">
               {displayCurrentServices.map((service) => (
                 <li key={service.id}>
                   <Link
@@ -76,7 +76,7 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
                 </li>
               ))}
             </ul>
-            <ul className="space-y-5 border-b px-4 py-5 text-sm font-medium uppercase md:text-base">
+            <ul className="space-y-5 border-b border-solid px-4 py-5 text-sm font-medium uppercase md:text-base">
               {displayAnchors.map((service) => (
                 <li key={service.id}>
                   <a
@@ -89,7 +89,7 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
                 </li>
               ))}
             </ul>
-            <ul className="space-y-5 border-b px-4 py-5 text-sm font-medium uppercase md:text-base">
+            <ul className="space-y-5 border-b border-solid px-4 py-5 text-sm font-medium uppercase md:text-base">
               <li>
                 <SheetClose asChild>
                   <a href={location} target="_blank" rel="noopener noreferrer" className="nav-link">
@@ -108,7 +108,12 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
           </div>
           <div className="sticky bottom-0 mt-auto mb-2 px-10 pt-2">
             <SheetClose asChild>
-              <BtnOrLink anchor={signUpAnchors.link} className="h-12" type="button" title="Записатися на прийом" />
+              <BtnOrLink
+                anchor={signUpAnchors.link}
+                className="h-12 text-sm font-bold uppercase md:text-lg"
+                type="button"
+                title="Записатися на прийом"
+              />
             </SheetClose>
           </div>
         </SheetContent>
@@ -117,5 +122,4 @@ const NavMenu = ({ address, location, phone, phoneHref }: Props) => {
   );
 };
 
-export { NavMenu }
-
+export { NavMenu };

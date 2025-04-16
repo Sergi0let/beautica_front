@@ -1,4 +1,4 @@
-import { Footer, Header, ScrollTrace } from "@/components";
+import { Footer, Header, PhoneAction, ScrollTrace } from "@/components";
 import { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
@@ -8,6 +8,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <Header />
       {children}
       <Footer />
+      <PhoneAction />
     </div>
   );
 };

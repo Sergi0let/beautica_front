@@ -427,7 +427,7 @@ export const servicesData = [
               id: 3,
               title: "Міжбрів’я",
               price: 3500,
-              newPrice: 2500,
+              newPrice: null,
             },
             {
               id: 4,
@@ -435,9 +435,9 @@ export const servicesData = [
               price: 2500,
               newPrice: null,
             },
-            { id: 5, title: "Кролячі зморшки (носик)", price: 2500, newPrice: 2000 },
-            { id: 6, title: "Звуження крил та серединки носика", price: 2000, newPrice: null },
-            { id: 7, title: "Ясенна посмішка", price: 2500, newPrice: null },
+            { id: 5, title: "Кролячі зморшки (носик)", price: 2000, newPrice: null },
+            { id: 6, title: "Звуження крил та серединки носика", price: 5500, newPrice: null },
+            { id: 7, title: "Ясенна посмішка", price: 2000, newPrice: null },
             { id: 8, title: "Зморшки маріонетки (опущення кутів рота)", price: 2000, newPrice: null },
             { id: 9, title: "Підборіддя", price: 2000, newPrice: null },
             { id: 10, title: "Платизма (шия)", price: 6500, newPrice: null },
@@ -470,7 +470,7 @@ export const servicesData = [
               id: 3,
               title: "Міжбрів’я",
               price: 3500,
-              newPrice: 2500,
+              newPrice: null,
             },
             {
               id: 4,
@@ -478,9 +478,9 @@ export const servicesData = [
               price: 2500,
               newPrice: null,
             },
-            { id: 5, title: "Кролячі зморшки (носик)", price: 2500, newPrice: null },
-            { id: 6, title: "Звуження крил та серединки носика", price: 2000, newPrice: null },
-            { id: 7, title: "Ясенна посмішка", price: 2500, newPrice: null },
+            { id: 5, title: "Кролячі зморшки (носик)", price: 2000, newPrice: null },
+            { id: 6, title: "Звуження крил та серединки носика", price: 5500, newPrice: null },
+            { id: 7, title: "Ясенна посмішка", price: 2000, newPrice: null },
             { id: 8, title: "Зморшки маріонетки (опущення кутів рота)", price: 2000, newPrice: null },
             { id: 9, title: "Підборіддя", price: 2000, newPrice: null },
             { id: 10, title: "Платизма (шия)", price: 6500, newPrice: null },
@@ -513,7 +513,7 @@ export const servicesData = [
               id: 3,
               title: "Міжбрів’я",
               price: 3500,
-              newPrice: 2500,
+              newPrice: null,
             },
             {
               id: 4,
@@ -521,9 +521,9 @@ export const servicesData = [
               price: 2500,
               newPrice: null,
             },
-            { id: 5, title: "Кролячі зморшки (носик)", price: 2500, newPrice: null },
-            { id: 6, title: "Звуження крил та серединки носика", price: 2000, newPrice: null },
-            { id: 7, title: "Ясенна посмішка", price: 2500, newPrice: null },
+            { id: 5, title: "Кролячі зморшки (носик)", price: 2000, newPrice: null },
+            { id: 6, title: "Звуження крил та серединки носика", price: 5500, newPrice: null },
+            { id: 7, title: "Ясенна посмішка", price: 2000, newPrice: null },
             { id: 8, title: "Зморшки маріонетки (опущення кутів рота)", price: 2000, newPrice: null },
             { id: 9, title: "Підборіддя", price: 2000, newPrice: null },
             { id: 10, title: "Платизма (шия)", price: 6500, newPrice: null },
@@ -554,24 +554,18 @@ export const servicesData = [
             },
             {
               id: 3,
-              title: "Міжбрів’я",
-              price: 1700,
-              newPrice: null,
-            },
-            {
-              id: 4,
               title: "Очі",
               price: 1700,
               newPrice: null,
             },
-            { id: 5, title: "Кролячі зморшки (носик)", price: 1500, newPrice: null },
-            { id: 6, title: "Звуження крил та серединки носика", price: 1500, newPrice: null },
-            { id: 7, title: "Ясенна посмішка", price: 1500, newPrice: null },
-            { id: 8, title: "Зморшки маріонетки (опущення кутів рота)", price: 1500, newPrice: null },
-            { id: 9, title: "Підборіддя", price: 1500, newPrice: null },
-            { id: 10, title: "Платизма (шия)", price: 5000, newPrice: null },
-            { id: 11, title: "Гіпергідроз (підвищена пітливість)", price: 5000, newPrice: null },
-            { id: 12, title: "Все обличчя (full face)", price: 9000, newPrice: null },
+            { id: 4, title: "Кролячі зморшки (носик)", price: 1500, newPrice: null },
+            { id: 5, title: "Звуження крил та серединки носика", price: 3500, newPrice: null },
+            { id: 6, title: "Ясенна посмішка", price: 1500, newPrice: null },
+            { id: 7, title: "Зморшки маріонетки (опущення кутів рота)", price: 1500, newPrice: null },
+            { id: 8, title: "Підборіддя", price: 1500, newPrice: null },
+            { id: 9, title: "Платизма (шия)", price: 5000, newPrice: null },
+            { id: 10, title: "Гіпергідроз (підвищена пітливість)", price: 5000, newPrice: null },
+            { id: 11, title: "Все обличчя (full face)", price: 9000, newPrice: null },
           ],
         },
       },
@@ -612,7 +606,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Restylane Vital (Швеція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/restylane_vital.webp",
         description: "Restylane Vital - препарат гіалуронової кислоти для зволоження та покращення структури шкіри.",
         prices: {
           titlePrice: {
@@ -649,7 +643,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Teosyal Redensity (Швейцарія)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/teosyal_redensity_switzerland.webp",
         description: "Teosyal Redensity - препарат для інтенсивного зволоження шкіри та боротьби з ознаками старіння.",
         prices: {
           titlePrice: {
@@ -686,7 +680,7 @@ export const servicesData = [
       {
         id: 3,
         title: "Juvéderm Volite (США)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/juvederm_volite.webp",
         description:
           "Juvéderm Volite - інноваційний препарат для довготривалого зволоження шкіри та покращення її еластичності.",
         prices: {
@@ -724,7 +718,7 @@ export const servicesData = [
       {
         id: 4,
         title: "Filorga NCTF (Франція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/filorga_nctf.webp",
         description: "Filorga NCTF - мезококтейль для інтенсивного живлення та регенерації шкіри.",
         prices: {
           titlePrice: {
@@ -763,7 +757,7 @@ export const servicesData = [
   {
     id: 3,
     name: "Контурна пластика губ",
-    price: 3200,
+    price: 4400,
     imgUrl: "/services/face-plastic.webp",
     pageUrl: ServicesRoutes.konturnaPlastukaGyb,
     description:
@@ -794,7 +788,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Juvéderm Ultra Smile (США)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/juvederm_ultra_smile.webp",
         description: "Juvéderm Ultra Smile - препарат для створення виразних губ із натуральним об'ємом.",
         prices: {
           titlePrice: {
@@ -825,7 +819,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Teosyal Kiss (Швейцарія)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/teosyal_kiss.webp",
         description: "Teosyal Kiss - інноваційний препарат для збільшення об'єму губ із довготривалим ефектом.",
         prices: {
           titlePrice: {
@@ -856,7 +850,7 @@ export const servicesData = [
       {
         id: 3,
         title: "Restylane Lip Volume (Швеція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/restylane_lip_volume.webp",
         description: "Restylane Lip Volume - препарат для створення об'єму та чітких контурів губ.",
         prices: {
           titlePrice: {
@@ -889,7 +883,7 @@ export const servicesData = [
   {
     id: 4,
     name: "Мезотерапія",
-    price: 3500,
+    price: 4500,
     imgUrl: "/services/mezoterapia.webp",
     pageUrl: ServicesRoutes.mezoterapia,
     description:
@@ -920,7 +914,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Filorga (Франція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/filorga_mezo.webp",
         description:
           "Філорга – поживний коктейль із гіалуроновою кислотою для регенерації шкіри. Ефективний для боротьби зі зморшками та сухістю.",
         prices: {
@@ -958,7 +952,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Revitacare (Франція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/revitacare_mezo.webp",
         description:
           "Коктейль Revitacare призначений для відновлення пружності шкіри та зменшення проявів пігментації.",
         prices: {
@@ -998,7 +992,7 @@ export const servicesData = [
   {
     id: 5,
     name: "Контурна пластика обличчя",
-    price: 5500,
+    price: 5700,
     imgUrl: "/services/konturna_leaps.webp",
     pageUrl: ServicesRoutes.konturnaPlastikaOblicha,
     description:
@@ -1029,7 +1023,7 @@ export const servicesData = [
       {
         id: 1,
         title: "Juvederm Voluma (США)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/juvederm_voluma.webp",
         description: "Juvederm Voluma - ідеальний філер для відновлення об'єму та корекції форми обличчя.",
         prices: {
           titlePrice: {
@@ -1066,7 +1060,7 @@ export const servicesData = [
       {
         id: 2,
         title: "Restylane Lyft (Швеція)",
-        imgUrl: "/drugs/1.png",
+        imgUrl: "/drugs/restylane_lyft.webp",
         description: "Restylane Lyft - філер для чітких контурів та відновлення об'єму.",
         prices: {
           titlePrice: {

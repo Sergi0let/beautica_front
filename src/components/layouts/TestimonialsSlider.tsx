@@ -169,7 +169,7 @@ const TestimonialImage = ({
           alt={alt}
           width={455}
           height={800}
-          className="testimonial-image"
+          className="testimonial-image bg-white"
         />
       </div>
     </div>
@@ -177,34 +177,3 @@ const TestimonialImage = ({
 };
 
 export { TestimonialsSlider };
-
-// <SwiperSlide key={id} className="testim-slide overflow-hidden">
-//   <div className="group">
-//     <figure className="relative h-[420px] w-full overflow-hidden">
-//       <div className="h-full w-full transition-transform duration-5000 ease-linear group-hover:translate-y-[calc(-100%+420px)]">
-//         <Image
-//           src={imgUrl || "/placeholder.svg"}
-//           alt={name}
-//           width={455}
-//           height={420}
-//           className="size-full object-contain group-hover:object-cover"
-//         />
-//       </div>
-//     </figure>
-//   </div>
-//   <div className="py-4"></div>
-
-//   <div className="flex items-center px-4 py-3 xl:px-6 xl:py-5">
-//     <div className="mr-2 sm:mr-4 md:mr-6">
-//       <figure className="border-action size-[60px] overflow-hidden rounded-full border-2 md:size-[80px] lg:size-[100px]">
-//         <Image src={avatar} alt={name} width={100} height={100} className="size-full object-cover" />
-//       </figure>
-//     </div>
-//     <div className="space-y-2">
-//       <h3 className="text-action text-xl font-semibold lg:text-2xl">{name}</h3>
-//       <time className="text-white/90 md:text-lg lg:text-xl" dateTime={date}>
-//         {formatDate(date)}
-//       </time>
-//     </div>
-//   </div>
-// </SwiperSlide>

@@ -9,7 +9,7 @@ export const contactsData = [
     id: "2",
     type: "phone",
     title: "+38(050) 078-82-94",
-    href: "tel:+380671234567",
+    href: "tel:+380500788294",
   },
   {
     id: "3",

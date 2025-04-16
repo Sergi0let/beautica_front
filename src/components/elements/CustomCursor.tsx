@@ -52,7 +52,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`bg-primary pointer-events-none fixed top-0 left-0 z-50 hidden size-16 flex-col items-center justify-center rounded-full text-sm transition-opacity duration-300 md:flex xl:size-[120px] ${
+      className={`pointer-events-none fixed top-0 left-0 z-50 hidden size-16 flex-col items-center justify-center rounded-full bg-[#F0F014] text-sm transition-opacity duration-300 md:flex xl:size-[120px] ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       style={{

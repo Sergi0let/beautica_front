@@ -99,7 +99,7 @@ const ServiseTable = ({ priceTable, name }: Props) => {
                             </td>
                             <td>
                               <b className="text-nowrap">{formatPrice(newPrice ? newPrice : price)}</b>
-                              {newPrice && <span>{formatPrice(newPrice)}</span>}
+                              {!!newPrice && <span>{formatPrice(newPrice)}</span>}
                             </td>
                           </tr>
                         ))}

@@ -9,7 +9,7 @@ import { ReactNode } from "react";
 import "../styles/globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = "Beautica — Косметологія у Києві";
+  const title = "Beautica | Косметологія у Києві";
   const description = "Ін’єкційна косметологія: контурна пластика, ботокс, біоревіталізація, мезотерапія та більше.";
 
   return {
@@ -19,12 +19,12 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: "/favicon/favicon.ico",
       apple: "/favicon/apple-icon.png",
-      shortcut: "/favicon/favicon.ico", // fallback
+      shortcut: "/favicon/favicon.ico",
       other: [
         {
           rel: "mask-icon",
           url: "/favicon/mask-icon.svg",
-          color: "#f2e9f2", // 👈 це — колір маски (адаптуй під свій брендинг)
+          color: "#f2e9f2",
         },
       ],
     },
