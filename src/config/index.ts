@@ -10,8 +10,14 @@ const config = {
         pass: process.env.EMAIL_PASS!,
         from: process.env.EMAIL_FROM!,
       },
+      prod: {
+        user: process.env.EMAIL_USER!,
+        pass: process.env.EMAIL_PASS!,
+        from: process.env.EMAIL_FROM!,
+        admin: process.env.EMAIL_ADMIN || "s.vashkevych@gmail.com", // Адміністраторська пошта
+      },
     },
   },
-}
+};
 
-export default config
+export default config;
