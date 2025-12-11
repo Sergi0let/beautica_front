@@ -1,6 +1,6 @@
-import type { MetadataItem } from "@/types"
+import type { MetadataItem } from "@/types";
 
-export const baseUrl = "https://www.beautica.com.ua"
+export const baseUrl = "https://www.beautica.com.ua";
 // ==================== SERVICES ROUTES =============
 export const ServicesRoutes = {
   botulinoterapia: "botulinoterapia",
@@ -8,7 +8,7 @@ export const ServicesRoutes = {
   konturnaPlastukaGyb: "konturna-plastuka-gyb",
   konturnaPlastikaOblicha: "konturna-plastika-oblicha",
   mezoterapia: "mezoterapia",
-}
+};
 // ==================== END SERVICES ROUTES =============
 
 // ====================  ANCHORS ====================
@@ -21,8 +21,8 @@ export const ANCHORS = {
   faq: "faq",
   procedure: "procedure",
   stages: "stages",
-  pricing: 'pricing'
-}
+  pricing: "pricing",
+};
 
 export const dataServices = [
   {
@@ -50,68 +50,68 @@ export const dataServices = [
     href: ServicesRoutes.konturnaPlastikaOblicha,
     id: "5",
   },
-]
+];
 export const mainPageAnchors = [
   {
-    id: '1',
+    id: "1",
     name: "Про мене",
     href: `#${ANCHORS.about}`,
   },
   {
-    id: '2',
+    id: "2",
     name: "Послуги",
     href: `#${ANCHORS.services}`,
   },
   {
-    id: '3',
+    id: "3",
     name: "До та Після",
     href: `#${ANCHORS.beforeAfter}`,
   },
   {
-    id: '4',
+    id: "4",
     name: "Відгуки",
     href: `#${ANCHORS.reviews}`,
   },
   {
-    id: '5',
+    id: "5",
     name: "Партнери",
     href: `#${ANCHORS.partners}`,
   },
   {
-    id: '6',
+    id: "6",
     name: "ПИТАННЯ",
     href: `#${ANCHORS.faq}`,
   },
-]
+];
 export const servicePageAnchors = [
   {
-    id: '1',
+    id: "1",
     name: "Про процедуру",
     href: `#${ANCHORS.procedure}`,
   },
   {
-    id: '2',
+    id: "2",
     name: "Етапи проведення",
     href: `#${ANCHORS.stages}`,
   },
   {
-    id: '3',
+    id: "3",
     name: "Ціни",
     href: `#${ANCHORS.pricing}`,
   },
   {
-    id: '4',
+    id: "4",
     name: "Відгуки",
     href: `#${ANCHORS.reviews}`,
   },
   {
-    id: '5',
+    id: "5",
     name: "Питання",
     href: `#${ANCHORS.faq}`,
   },
-]
+];
 
-export const signUpAnchors = { name: "Записатись на прийом", link: "appointment" }
+export const signUpAnchors = { name: "Записатись на прийом", link: "appointment" };
 // ==================== END ANCHORS SERVICES =============
 
 // ==================== FIELDS =============
@@ -119,7 +119,7 @@ export const FIELDS = {
   name: { label: "Ім'я", type: "text", placeholder: "Ваше ім'я" },
   phone: { label: "Телефон", type: "tel", placeholder: "Телефон" },
   description: { label: "Чим я можу бути вам корисною?", type: "textarea", placeholder: "Текст повідомлення" },
-}
+};
 // ==================== END FIELDS =============
 // ==================== METADATA FOR EACH SERVICE =============
 export const metadataObj: Record<string, MetadataItem> = {
@@ -153,7 +153,7 @@ export const metadataObj: Record<string, MetadataItem> = {
       "Контурна плістика обличчя - це дієтина, яка дозволяє змінювати тіло та збільшувати масу тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги. Це дієтина, яка дозволяє збільшити відносні ваги тіла. Це дієтина, яка дозволяє збільшити масу тіла та збільшити відносні ваги.",
     image: "face-plastic.jpg",
   },
-} as const
+} as const;
 // ==================== END METADATA =============
 // ========== FAQ =============
 export const faqs = {
@@ -177,13 +177,13 @@ export const faqs = {
         "Перед початком процедури біоревіталізації, косметолог проводить детальне обстеження шкіри та консультацію з клієнтом. Після цього, здійснюється введення поживних речовин в шкіру. Як правило, це здійснюється за допомогою тонких ін’єкцій. Процедура зазвичай мало болісна, але може супроводжуватися незначними почервоніннями або набряканням на місці введення.",
     },
     {
-      id: '4',
+      id: "4",
       question: "Чи потрібен час на відновлення після біоревіталізації?",
       answer:
         "Одна з переваг біоревіталізації полягає в тому, що час відновлення після процедури дійсно незначний. Майже всі клієнти повертаються до звичного ритму життя без обмежень вже в той же день. Однак, кожен організм унікальний, і час відновлення може варіюватися. Косметолог зазвичай надає рекомендації щодо догляду за шкірою після процедури, таких як використання засобів з сонцезахисним фактором і уникнення інтенсивної фізичної активності.",
     },
     {
-      id: '5',
+      id: "5",
       question: "Як довго тримаються результати біоревіталізації?",
       answer:
         "Результати біоревіталізації можуть радувати вас від кількох місяців до року, залежно від кількості та типу проведених процедур, індивідуальних характеристик шкіри та здоров'я. Після першої процедури зазвичай рекомендується серія повторних сеансів для досягнення оптимальних результатів. Підтримка ефекту може вимагати періодичного повторення процедур.",
@@ -205,24 +205,23 @@ export const faqs = {
     {
       id: "3",
       question: "Як спати після збільшення губ?",
-      answer:
-        "В перші дні після процедури забороняється спати на животі обличчям в подушку.",
+      answer: "В перші дні після процедури забороняється спати на животі обличчям в подушку.",
     },
     {
-      id: '4',
+      id: "4",
       question: "Через скільки проходить набряк після збільшення губ?",
       answer:
         "Набряк і синці (в разі їх наявності) після процедури можуть триматися до 7 днів. Це норма. Для кращого відновлення лікар додатково може призначити ліки або процедури.",
     },
     {
-      id: '5',
+      id: "5",
       question: "Скільки тримається ефект від збільшення губ?",
       answer:
         "Тривалість ефекту від збільшення губ зберігається від 6 до 12 місяців в залежності від особливостей організму (кожен організм з різною швидкістю виводить введену гіалуронову кислоту, це генетична особливість від природи). Для підтримки припухлості губ необхідно повторити процедуру.",
     },
 
     {
-      id: '6',
+      id: "6",
       question: "Чому болять губи після контурної пластики?",
       answer:
         "Під час процедури збільшення – відбувається певна кількість проколів, через які вводять у губи препарат на основі гіалуронової кислоти, для їх збільшення. Даний метод може викликати певний дискомфорт і легкі болючі відчуття під час процедури, так і після. Цей процес може бути короткочасним і з часом зменшуватися.",
@@ -275,7 +274,7 @@ export const faqs = {
 
   [ServicesRoutes.mezoterapia]: [
     {
-      id: '1',
+      id: "1",
       question: "Що дає мезотерапія?",
       answer:
         "Мезотерапія дає можливість усунути косметичні дефекти і вирішити різні естетичні проблеми: сухість шкіри, пігментація, дрібні зморшки, купероз, знижений тонус, акне, веснянки, темні кола під очима, ознаки фотостаріння, тьмяний колір обличчя і ін.",
@@ -337,7 +336,7 @@ export const faqs = {
         "Секрет успіху простий – потрібно вколоти правильну дозу, тоді міміка не порушується. Сам по собі препарат жодним чином не впливає на риси обличчя і здатність посміхатися.",
     },
   ],
-  "generalType": [
+  generalType: [
     {
       id: "1",
       question: "Біоревіталізація шкіри гіалуроновою кислотою - базова процедура?",
@@ -363,7 +362,7 @@ export const faqs = {
         "Інєкційна процедура біоревіталізація гіалуроновою кислотою ефективна, безпечна, а головне універсальна. Проводити маніпуляції можна як на обличчі, так і на тілі.",
     },
   ],
-}
+};
 // ========== END FAQ =============
 
 // ==================== SERVICES DATA =============
@@ -1096,7 +1095,7 @@ export const servicesData = [
       },
     ],
   },
-]
+];
 // ============= END SERVICES DATA =============
 
 // ============= START PARTNERS DATA =============
@@ -1104,10 +1103,10 @@ export const partnersData = [
   { src: "/partners/hydropeptide.png", alt: "hydropeptide", link: "https://hydropeptide.com.ua" },
   { src: "/partners/medic8.png", alt: "medic8", link: "https://medik8.ua" },
   { src: "/partners/colorscience-logo.png", alt: "colorscience-logo", link: "https://colorescience.com.ua" },
-  { src: "/partners/atache-logo.png", alt: "Atache brend", link: "https://atache.com" },
+  { src: "/partners/theramid-logo.png", alt: "Teramid brend", link: "https://nichebeautylab.com/" },
   { src: "/partners/beauti-vite.png", alt: "beauti-vite", link: "https://vilna-beauty.com" },
   { src: "/partners/utsukusy.png", alt: "beauti-vite", link: "https://vilna-beauty.com" },
   { src: "/partners/circadia.png", alt: "circadia", link: "https://www.circadia.com.ua" },
   { src: "/partners/is_clinical.png", alt: "is_clinical", link: "https://is-clinical.com.ua" },
-]
+];
 // ============= END PARTNERS DATA =============
